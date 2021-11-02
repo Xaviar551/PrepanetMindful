@@ -1,24 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PrepanetMindful" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="in5-xe-8dT">
+                                <rect key="frame" x="15" y="148" width="384" height="600"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PrepanetLogo" translatesAutoresizingMaskIntoConstraints="NO" id="eGU-jo-AdO">
+                                        <rect key="frame" x="8" y="48" width="368" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="DKp-9w-G7r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Matricula" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0hr-hS-V4H">
+                                        <rect key="frame" x="25" y="236" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Sxa-1B-CpU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matricula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7u-Vl-oru">
+                                        <rect key="frame" x="25" y="210" width="71" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="VP2-Qv-4jE"/>
+                                            <constraint firstAttribute="width" constant="71" id="btl-A4-l3w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gvu-s6-BcG">
+                                        <rect key="frame" x="25" y="301" width="88" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="88" id="6DQ-HB-cSL"/>
+                                            <constraint firstAttribute="height" constant="21" id="UQr-Po-5hN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kih-bh-Ybv">
+                                        <rect key="frame" x="25" y="480" width="334" height="50"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7DX-90-TfO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" systemColor="systemGray5Color"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhZ-SH-EZv">
+                                        <rect key="frame" x="25" y="340" width="334" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="6x2-e6-tbp"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="amd-st-PsG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hhZ-SH-EZv" secondAttribute="trailing" constant="25" id="3Dh-jF-bmg"/>
+                                    <constraint firstItem="kih-bh-Ybv" firstAttribute="leading" secondItem="in5-xe-8dT" secondAttribute="leading" constant="25" id="3bE-mI-lS2"/>
+                                    <constraint firstItem="M7u-Vl-oru" firstAttribute="leading" secondItem="in5-xe-8dT" secondAttribute="leading" constant="25" id="9jI-PY-73O"/>
+                                    <constraint firstItem="M7u-Vl-oru" firstAttribute="top" secondItem="in5-xe-8dT" secondAttribute="top" constant="210" id="9rp-rl-2cK"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="eGU-jo-AdO" secondAttribute="trailing" id="KQX-v4-SDL"/>
+                                    <constraint firstItem="0hr-hS-V4H" firstAttribute="top" secondItem="M7u-Vl-oru" secondAttribute="bottom" constant="5" id="Odc-CN-IcK"/>
+                                    <constraint firstAttribute="bottom" secondItem="kih-bh-Ybv" secondAttribute="bottom" constant="70" id="QQc-7b-dr0"/>
+                                    <constraint firstItem="0hr-hS-V4H" firstAttribute="leading" secondItem="in5-xe-8dT" secondAttribute="leading" constant="25" id="QyO-xt-UtD"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hr-hS-V4H" secondAttribute="trailing" constant="25" id="USw-D4-gVM"/>
+                                    <constraint firstItem="Gvu-s6-BcG" firstAttribute="leading" secondItem="M7u-Vl-oru" secondAttribute="leading" id="V8d-tc-h3G"/>
+                                    <constraint firstItem="Gvu-s6-BcG" firstAttribute="top" secondItem="M7u-Vl-oru" secondAttribute="bottom" constant="70" id="YDL-3c-zqF"/>
+                                    <constraint firstItem="eGU-jo-AdO" firstAttribute="top" secondItem="in5-xe-8dT" secondAttribute="topMargin" constant="40" id="Z7E-fV-lUC"/>
+                                    <constraint firstItem="eGU-jo-AdO" firstAttribute="leading" secondItem="in5-xe-8dT" secondAttribute="leadingMargin" id="cOW-mj-9iR"/>
+                                    <constraint firstItem="hhZ-SH-EZv" firstAttribute="top" secondItem="Gvu-s6-BcG" secondAttribute="bottom" constant="18" id="goO-CC-fcN"/>
+                                    <constraint firstAttribute="trailing" secondItem="kih-bh-Ybv" secondAttribute="trailing" constant="25" id="hUS-Xd-EpH"/>
+                                    <constraint firstItem="hhZ-SH-EZv" firstAttribute="leading" secondItem="in5-xe-8dT" secondAttribute="leading" constant="25" id="jKb-KQ-0tM"/>
+                                    <constraint firstAttribute="height" constant="600" id="od9-p6-wto"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="in5-xe-8dT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="C8y-IT-O0g"/>
+                            <constraint firstItem="in5-xe-8dT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cqh-Dc-DTD"/>
+                            <constraint firstItem="in5-xe-8dT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hNg-Cw-fEQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="in5-xe-8dT" secondAttribute="trailing" constant="15" id="mXc-yw-z2I"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="kih-bh-Ybv" id="ra7-xe-BEa"/>
+                        <outlet property="tfId" destination="0hr-hS-V4H" id="Gvn-GJ-S5Y"/>
+                        <outlet property="tfPassword" destination="hhZ-SH-EZv" id="HGz-cS-ypE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="PrepanetLogo" width="200" height="200"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
