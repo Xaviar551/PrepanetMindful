@@ -1,16 +1,16 @@
 //
-//  CoursesViewController.swift
+//  CoursesVC.swift
 //  PrepanetMindful
 //
-//  Created by Cristian Omar Urbina Herrera on 02/11/21.
+//  Created by Cristian Omar Urbina Herrera on 03/11/21.
 //
 
 import UIKit
 
-class CoursesViewController: UIViewController {
+class CoursesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var stackViewCourses: UIStackView!
     var talleres: [Taller] = []
+    @IBOutlet weak var tableCourses: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,15 +28,31 @@ class CoursesViewController: UIViewController {
 //            let myView = CourseView(taller: taller)
 //            stackViewCourses.addArrangedSubview(myView)
 //        }
+        tableCourses.separatorStyle = UITableViewCell.SeparatorStyle.none
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Table view data source
+
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return talleres.count
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellCourse") as! CourseCell
+        cell.lbCourseName.text = talleres[indexPath.row].nombre
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let tHeight = tableCourses.bounds.height
+        let temp = tHeight/CGFloat(talleres.count)
+        return temp
+    }
 
 }
