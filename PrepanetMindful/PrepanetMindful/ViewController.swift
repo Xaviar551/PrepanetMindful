@@ -16,22 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var vwUser: UIView!
     @IBOutlet weak var vwPassword: UIView!
     
-    func prepareView() {
-        btnLogin.layer.cornerRadius = 15.0
-        btnLogin.layer.borderWidth = 2.0
-        btnLogin.layer.borderColor = UIColor.systemGray.cgColor
-        btnLogin.clipsToBounds = true;
-        tfUser.layer.cornerRadius = 15.0
-        tfUser.layer.borderWidth = 2.0
-        tfUser.layer.borderColor = UIColor.systemGray.cgColor
-        tfPassword.layer.cornerRadius = 15.0
-        tfPassword.layer.borderWidth = 2.0
-        tfPassword.layer.borderColor = UIColor.systemGray.cgColor
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //prepareView()
         
     }
     
@@ -41,7 +27,13 @@ class ViewController: UIViewController {
         self.vwUser.round(cornerRadius: self.vwUser.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
         self.vwPassword.round(cornerRadius: self.vwPassword.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
         self.btnLogin.layer.cornerRadius = self.btnLogin.frame.size.height/2
-        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    @IBAction func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
     }
 }
 
