@@ -9,6 +9,13 @@ import UIKit
 
 class CourseDetailViewController: UIViewController {
 
+    @IBOutlet weak var imgCourseImage: UIImageView!
+    @IBOutlet weak var lbCourseName: UILabel!
+    @IBOutlet weak var lbCourseStatus: UILabel!
+    @IBOutlet weak var lbStartDate: UILabel!
+    @IBOutlet weak var lbFinalDate: UILabel!
+    @IBOutlet weak var lbDescriptionTxt: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
