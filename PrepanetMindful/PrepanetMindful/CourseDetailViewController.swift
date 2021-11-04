@@ -16,6 +16,8 @@ class CourseDetailViewController: UIViewController {
     @IBOutlet weak var lbFinalDate: UILabel!
     @IBOutlet weak var lbDescriptionTxt: UILabel!
     
+    var course : Course!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
