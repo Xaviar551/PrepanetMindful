@@ -9,7 +9,12 @@ import UIKit
 
 class CoursesTableViewController: UITableViewController {
     
-    var courses = [ Course(id: "1", name: "Mis emociones", courseDescription: "Lorem")
+    var courses = [ Course(id: "1", name: "Liderazgo Positivo y Transformación Personal", status: "Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
+                    Course(id: "2", name: "Mis habilidades y motivaciones", status: "No Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
+                    Course(id: "3", name: "Mis emociones", status: "Cursando", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
+                    Course(id: "4", name: "Mis relaciones", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
+                    Course(id: "5", name: "Mis áreas de oportunidad", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
+                    Course(id: "6", name: "Mis metas", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem")
     ]
 
     override func viewDidLoad() {
@@ -37,6 +42,27 @@ class CoursesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseTableViewCell
 
         // Configure the cell...
+        let course = courses[indexPath.row]
+        cell.lbCourseName.text = course.name
+        cell.lbCourseStatus.text = course.status
+        
+        switch course.status {
+        case "Acreditado":
+            cell.lbCourseStatus.textColor = .systemBlue
+            cell.imgStatus.image = UIImage(systemName: "checkmark")
+            cell.imgStatus.tintColor = .systemBlue
+        case "No Acreditado":
+            cell.lbCourseStatus.textColor = .systemRed
+            cell.imgStatus.image = UIImage(systemName: "exclamationmark.circle.fill")
+            cell.imgStatus.tintColor = .systemRed
+        case "Cursando":
+            cell.lbCourseStatus.textColor = .systemYellow
+            cell.imgStatus.image = UIImage(systemName: "star.fill")
+            cell.imgStatus.tintColor = .systemYellow
+        default:
+            cell.lbCourseStatus.textColor = .systemGray
+            cell.imgStatus.image = nil
+        }
 
         return cell
     }
