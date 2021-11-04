@@ -9,6 +9,8 @@ import UIKit
 
 class CoursesTableViewController: UITableViewController {
     
+    var typeOfUser: String!
+    
     var courses = [ Course(id: "1", name: "Liderazgo Positivo y Transformación Personal", status: "Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
                     Course(id: "2", name: "Mis habilidades y motivaciones", status: "No Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
                     Course(id: "3", name: "Mis emociones", status: "Cursando", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
@@ -16,7 +18,16 @@ class CoursesTableViewController: UITableViewController {
                     Course(id: "5", name: "Mis áreas de oportunidad", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
                     Course(id: "6", name: "Mis metas", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem")
     ]
-
+    
+    var students = [
+        Student(id:"A07045937" , name: "Fernanada Gonzalez Jimenez" , campus: "CSF"),
+        Student(id:"A07045938" , name: "Johan Gadiel Garcia Marin", campus: "CSF"),
+        Student(id:"A07045939" , name: "Abishai Enrique Del Castillo Vega", campus: "CSF"),
+        Student(id:"A07045940" , name: "Daniela Cristal Lorenzo Blas", campus: "PUE"),
+        Student(id:"A07045941" , name: "Abril Estefania Tun Kun", campus: "PUE"),
+        Student(id:"A07045942" , name: "Edgar Leonardo Nuñez Garcia" , campus: "PUE"),
+        Student(id:"A07045943" , name: "Nathali Guzman Santos", campus: "PUE"),
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,11 +119,28 @@ class CoursesTableViewController: UITableViewController {
     */
 
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextView = segue.destination as! CourseDetailViewController
-        let index = tableView.indexPathForSelectedRow!
-        nextView.course = courses[index.row]
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showCourse" && self.typeOfUser == "admin" {
+            performSegue(withIdentifier: "showStudents", sender: nil)
+            return false
+        }
+        return true
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCourse" {
+            let nextView = segue.destination as! CourseDetailViewController
+            let index = tableView.indexPathForSelectedRow!
+            nextView.course = courses[index.row]
+        }
+        else if segue.identifier == "showStudents" {
+            let nextView = segue.destination as! StudentsTableViewController
+            nextView.students = students
+        }
+        else {
+            
+        }
+    }
+    
+    
 
 }

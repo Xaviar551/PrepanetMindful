@@ -35,6 +35,11 @@ class ViewController: UIViewController {
     @IBAction func hideKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextView = segue.destination as! CoursesTableViewController
+        nextView.typeOfUser = tfUser.text
+    }
 }
 
 extension UIView {
