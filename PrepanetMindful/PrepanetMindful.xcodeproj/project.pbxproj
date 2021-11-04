@@ -16,6 +16,7 @@
 		8DDAFC922732930F00DF3BEC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC912732930F00DF3BEC /* Course.swift */; };
 		BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */; };
 		BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */; };
+		BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8DDAFC912732930F00DF3BEC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
+		BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				3B07F9E52721D06000FA88FE /* SceneDelegate.swift */,
 				3B07F9E72721D06000FA88FE /* ViewController.swift */,
 				3B07F9E92721D06000FA88FE /* Main.storyboard */,
+				BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */,
 				BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */,
 				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				3B07F9E42721D06000FA88FE /* AppDelegate.swift in Sources */,
 				BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */,
 				3B07F9E62721D06000FA88FE /* SceneDelegate.swift in Sources */,
+				BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,6 @@ class CoursesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // return the number of rows
         return courses.count
     }
 
@@ -79,10 +78,10 @@ class CoursesTableViewController: UITableViewController {
     */
 
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! CourseDetailViewController
+        let index = tableView.indexPathForSelectedRow!
+        nextView.course = courses[index.row]
     }
 
 
