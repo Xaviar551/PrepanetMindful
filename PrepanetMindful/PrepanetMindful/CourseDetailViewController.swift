@@ -20,8 +20,17 @@ class CourseDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.locale = .current
+        formatter.dateFormat = "MMM d, yyyy"
 
-        // Do any additional setup after loading the view.
+        lbCourseName.text = course.name
+        lbCourseStatus.text = course.status
+        lbStartDate.text = formatter.string(from: course.startDate)
+        lbFinalDate.text = formatter.string(from: course.finalDate)
+        lbDescriptionTxt.text = course.description
     }
     
 
