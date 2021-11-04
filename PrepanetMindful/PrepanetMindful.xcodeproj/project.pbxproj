@@ -13,9 +13,8 @@
 		3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9E92721D06000FA88FE /* Main.storyboard */; };
 		3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EC2721D06100FA88FE /* Assets.xcassets */; };
 		3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */; };
-		8DA296EE27331C3D007D83B2 /* CoursesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA296ED27331C3D007D83B2 /* CoursesVC.swift */; };
-		8DA296F127331C57007D83B2 /* CourseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA296F027331C57007D83B2 /* CourseTVC.swift */; };
 		8DDAFC922732930F00DF3BEC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC912732930F00DF3BEC /* Course.swift */; };
+		BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +26,8 @@
 		3B07F9EC2721D06100FA88FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B07F9EF2721D06100FA88FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B07F9F12721D06100FA88FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DA296ED27331C3D007D83B2 /* CoursesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesVC.swift; sourceTree = "<group>"; };
-		8DA296F027331C57007D83B2 /* CourseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTVC.swift; sourceTree = "<group>"; };
 		8DDAFC912732930F00DF3BEC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +64,7 @@
 				3B07F9E52721D06000FA88FE /* SceneDelegate.swift */,
 				3B07F9E72721D06000FA88FE /* ViewController.swift */,
 				3B07F9E92721D06000FA88FE /* Main.storyboard */,
-				8DA296ED27331C3D007D83B2 /* CoursesVC.swift */,
-				8DA296F027331C57007D83B2 /* CourseTVC.swift */,
+				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
 				3B07F9F12721D06100FA88FE /* Info.plist */,
@@ -146,11 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */,
 				3B07F9E82721D06000FA88FE /* ViewController.swift in Sources */,
-				8DA296EE27331C3D007D83B2 /* CoursesVC.swift in Sources */,
 				8DDAFC922732930F00DF3BEC /* Course.swift in Sources */,
 				3B07F9E42721D06000FA88FE /* AppDelegate.swift in Sources */,
-				8DA296F127331C57007D83B2 /* CourseTVC.swift in Sources */,
 				3B07F9E62721D06000FA88FE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
