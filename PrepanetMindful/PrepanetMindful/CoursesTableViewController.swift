@@ -38,6 +38,7 @@ class CoursesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         //setTitle("Courses", andImage: UIImage(systemName: "book.closed.fill")!)
+        navigationController?.navigationBar.barTintColor = UIColor(named: "DarkBlue")
     }
 
     // MARK: - Table view data source

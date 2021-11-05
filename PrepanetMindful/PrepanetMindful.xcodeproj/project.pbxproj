@@ -19,6 +19,7 @@
 		8D5C056E273424B400603A5C /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C056D273424B400603A5C /* StudentTableViewCell.swift */; };
 		8D5C05712734257700603A5C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C05702734257700603A5C /* Student.swift */; };
 		8DDAFC922732930F00DF3BEC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC912732930F00DF3BEC /* Course.swift */; };
+		BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7516BB2734CBA300E93E68 /* Colors.xcassets */; };
 		BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */; };
 		BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */; };
 		BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */; };
@@ -39,6 +40,7 @@
 		8D5C056D273424B400603A5C /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		8D5C05702734257700603A5C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		8DDAFC912732930F00DF3BEC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		BC7516BB2734CBA300E93E68 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				8D5C05702734257700603A5C /* Student.swift */,
 				BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */,
 				BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */,
+				BC7516BB2734CBA300E93E68 /* Colors.xcassets */,
 				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */,
+				BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */,
 				3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */,
 				3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */,
 			);
