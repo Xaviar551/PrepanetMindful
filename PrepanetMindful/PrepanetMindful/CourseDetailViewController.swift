@@ -8,6 +8,7 @@
 import UIKit
 
 class CourseDetailViewController: UIViewController {
+    
 
     @IBOutlet weak var imgCourseImage: UIImageView!
     @IBOutlet weak var lbCourseName: UILabel!
@@ -30,7 +31,7 @@ class CourseDetailViewController: UIViewController {
         lbCourseStatus.text = course.status
         lbStartDate.text = formatter.string(from: course.startDate)
         lbFinalDate.text = formatter.string(from: course.finalDate)
-        lbDescriptionTxt.text = course.description
+        lbDescriptionTxt.text = course.courseDescription
         
         switch course.status {
         case "Acreditado":

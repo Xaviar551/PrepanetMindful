@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class CoursesTableViewController: UITableViewController {
     
@@ -37,13 +38,31 @@ class CoursesTableViewController: UITableViewController {
         Student(id:"A07045942" , name: "Edgar Leonardo Nuñez Garcia" , campus: "PUE"),
         Student(id:"A07045943" , name: "Nathali Guzman Santos", campus: "PUE"),
     ]
-    
+    class CourseData{
+        var name: String = ""
+        var description: String = ""
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Cargar la informacion de los talleres
+        // desde Firebase
+        let db = Firestore.firestore()
+        let docRef = db.collection("talleres").getDocuments(){(querySnap, err) in
+            var count=0
+            for doc in querySnap!.documents{
+                print(doc.data())
+                self.courses[count].name=doc.data()["name"] as! String
+                self.courses[count].courseDescription=doc.data()["description"] as! String
+                self.tableView.reloadData()
+                count+=1
+            }
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         //setTitle("Courses", andImage: UIImage(systemName: "book.closed.fill")!)
