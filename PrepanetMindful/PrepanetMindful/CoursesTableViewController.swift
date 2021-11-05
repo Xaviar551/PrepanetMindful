@@ -19,6 +19,15 @@ class CoursesTableViewController: UITableViewController {
                     Course(id: "6", name: "Mis metas", status: "Próximo", startDate: Date(), finalDate: Date(), courseDescription: "Lorem")
     ]
     
+    var icons = [
+        "1" : "person.2.circle.fill",
+        "2" : "heart.circle.fill",
+        "3" : "smiley.fill",
+        "4" : "person.2.fill",
+        "5" : "book.circle.fill",
+        "6" : "calendar"
+    ]
+    
     var students = [
         Student(id:"A07045937" , name: "Fernanada Gonzalez Jimenez" , campus: "CSF"),
         Student(id:"A07045938" , name: "Johan Gadiel Garcia Marin", campus: "CSF"),
@@ -59,6 +68,7 @@ class CoursesTableViewController: UITableViewController {
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
         cell.lbCourseStatus.text = course.status
+        cell.imgCourseIcon.image = UIImage(systemName: icons[course.id]!)
         
         switch course.status {
         case "Acreditado":
