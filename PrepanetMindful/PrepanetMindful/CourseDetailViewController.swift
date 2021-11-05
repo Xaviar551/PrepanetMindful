@@ -31,6 +31,17 @@ class CourseDetailViewController: UIViewController {
         lbStartDate.text = formatter.string(from: course.startDate)
         lbFinalDate.text = formatter.string(from: course.finalDate)
         lbDescriptionTxt.text = course.description
+        
+        switch course.status {
+        case "Acreditado":
+            lbCourseStatus.textColor = .systemBlue
+        case "No Acreditado":
+            lbCourseStatus.textColor = .systemRed
+        case "Cursando":
+            lbCourseStatus.textColor = .systemYellow
+        default:
+            lbCourseStatus.textColor = .systemGray
+        }
     }
     
 

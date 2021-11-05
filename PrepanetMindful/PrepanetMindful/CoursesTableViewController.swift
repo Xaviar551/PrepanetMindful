@@ -28,6 +28,7 @@ class CoursesTableViewController: UITableViewController {
         Student(id:"A07045942" , name: "Edgar Leonardo Nuñez Garcia" , campus: "PUE"),
         Student(id:"A07045943" , name: "Nathali Guzman Santos", campus: "PUE"),
     ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +37,7 @@ class CoursesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //setTitle("Courses", andImage: UIImage(systemName: "book.closed.fill")!)
     }
 
     // MARK: - Table view data source
@@ -79,7 +81,7 @@ class CoursesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 108
+        return 120
     }
     
 
@@ -126,6 +128,7 @@ class CoursesTableViewController: UITableViewController {
         }
         return true
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCourse" {
             let nextView = segue.destination as! CourseDetailViewController
@@ -141,6 +144,19 @@ class CoursesTableViewController: UITableViewController {
         }
     }
     
-    
+}
 
+extension UIViewController {
+    func setTitle(_ title: String, andImage image: UIImage) {
+        let lbTitle = UILabel()
+        lbTitle.text = title
+        lbTitle.textColor = UIColor.white
+        lbTitle.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+        
+        let imgView = UIImageView(image: image)
+        let titleView = UIStackView(arrangedSubviews: [imgView, lbTitle])
+        titleView.axis = .horizontal
+        titleView.spacing = 10.0
+        navigationItem.titleView = titleView
+    }
 }
