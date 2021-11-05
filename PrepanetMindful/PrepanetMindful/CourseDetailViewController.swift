@@ -15,11 +15,14 @@ class CourseDetailViewController: UIViewController {
     @IBOutlet weak var lbStartDate: UILabel!
     @IBOutlet weak var lbFinalDate: UILabel!
     @IBOutlet weak var lbDescriptionTxt: UILabel!
+    @IBOutlet weak var btnEnroll: UIButton!
     
     var course : Course!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        btnEnroll.layer.cornerRadius = btnEnroll.frame.size.height/2
         
         let formatter = DateFormatter()
         formatter.timeZone = .current
@@ -31,6 +34,7 @@ class CourseDetailViewController: UIViewController {
         lbStartDate.text = formatter.string(from: course.startDate)
         lbFinalDate.text = formatter.string(from: course.finalDate)
         lbDescriptionTxt.text = course.description
+        imgCourseImage.image = UIImage(named: "tec\(course.id).jpg")
         
         switch course.status {
         case "Acreditado":
