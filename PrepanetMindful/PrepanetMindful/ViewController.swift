@@ -23,15 +23,25 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.container.round(cornerRadius: 25.0, borderWidth: 2.0, borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
-        self.vwUser.round(cornerRadius: self.vwUser.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
-        self.vwPassword.round(cornerRadius: self.vwPassword.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
-        self.btnLogin.layer.cornerRadius = self.btnLogin.frame.size.height/2
-        self.navigationController?.isNavigationBarHidden = true
+        // container.round(cornerRadius: 25.0, borderWidth: 2.0, borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+        container.layer.cornerRadius = 25.0
+        container.layer.shadowColor = UIColor.black.cgColor
+        container.layer.shadowOpacity = 0.3
+        container.layer.shadowOffset = CGSize(width: 2, height: 3)
+        container.layer.shadowRadius = 4.0
+        container.layer.shadowPath = UIBezierPath(roundedRect: container.bounds.insetBy(dx: -3, dy: -4), cornerRadius: 25).cgPath
+        container.clipsToBounds = false
+        
+        vwUser.round(cornerRadius: vwUser.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
+        vwPassword.round(cornerRadius: vwPassword.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)
+        btnLogin.layer.cornerRadius = btnLogin.frame.size.height/2
+        navigationController?.isNavigationBarHidden = true
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden = false
     }
+    
     @IBAction func hideKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
