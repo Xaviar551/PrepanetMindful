@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Configure the cell...
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
-        cell.lbCourseStatus.text = course.status
+        cell.lbStatus.text = course.status
 
         return cell
     }

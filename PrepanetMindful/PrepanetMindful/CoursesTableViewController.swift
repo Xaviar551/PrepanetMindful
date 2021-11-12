@@ -65,7 +65,6 @@ class CoursesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseTableViewCell
 
-        // Configure the cell...
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
         cell.lbCourseStatus.text = course.status
@@ -96,6 +95,14 @@ class CoursesTableViewController: UITableViewController {
         return 120
     }
     
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if typeOfUser == "admin" {
+            performSegue(withIdentifier: "showStudents", sender: tableView.cellForRow(at: indexPath))
+        } else {
+            performSegue(withIdentifier: "showCourse", sender: tableView.cellForRow(at: indexPath))
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -117,29 +124,16 @@ class CoursesTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     // MARK: - Navigation
+    /*
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "showCourse" && self.typeOfUser == "admin" {
+        if identifier == "showCourse" && typeOfUser == "admin" {
             performSegue(withIdentifier: "showStudents", sender: nil)
             return false
         }
         return true
     }
+     */
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCourse" {
@@ -148,7 +142,7 @@ class CoursesTableViewController: UITableViewController {
             nextView.course = courses[index.row]
         }
         else if segue.identifier == "showStudents" {
-            let nextView = segue.destination as! StudentsTableViewController
+            let nextView = segue.destination as! StudentsViewController
             nextView.students = students
         }
         else {
@@ -156,19 +150,4 @@ class CoursesTableViewController: UITableViewController {
         }
     }
     
-}
-
-extension UIViewController {
-    func setTitle(_ title: String, andImage image: UIImage) {
-        let lbTitle = UILabel()
-        lbTitle.text = title
-        lbTitle.textColor = UIColor.white
-        lbTitle.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
-        
-        let imgView = UIImageView(image: image)
-        let titleView = UIStackView(arrangedSubviews: [imgView, lbTitle])
-        titleView.axis = .horizontal
-        titleView.spacing = 10.0
-        navigationItem.titleView = titleView
-    }
 }
