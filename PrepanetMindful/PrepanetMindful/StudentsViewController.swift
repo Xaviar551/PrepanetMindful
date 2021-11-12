@@ -10,6 +10,12 @@ import UIKit
 class StudentsViewController: UIViewController, UITableViewDataSource,
     UITableViewDelegate {
     
+    @IBOutlet weak var lbCampus: UILabel!
+    @IBOutlet weak var lbPeriod: UILabel!
+    @IBOutlet weak var vwSearchBackground: UIView!
+    @IBOutlet weak var tfSearch: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
     var students: [Student] = []
     
     
@@ -17,6 +23,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
     }
     
 

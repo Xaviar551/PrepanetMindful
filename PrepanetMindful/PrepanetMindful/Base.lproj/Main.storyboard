@@ -343,7 +343,7 @@
                                         <color key="tintColor" systemColor="labelColor"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BUq-kj-08z">
                                 <rect key="frame" x="0.0" y="233" width="414" height="616"/>
@@ -407,6 +407,13 @@
                         <viewLayoutGuide key="safeArea" id="kUL-84-7M7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="lbCampus" destination="Fgs-Lw-hcf" id="RYs-UE-KRW"/>
+                        <outlet property="lbPeriod" destination="jck-ps-zrC" id="uhw-TT-Ym3"/>
+                        <outlet property="tableView" destination="BUq-kj-08z" id="F9b-6B-4yW"/>
+                        <outlet property="tfSearch" destination="hWc-gW-Uz9" id="LJu-59-mTP"/>
+                        <outlet property="vwSearchBackground" destination="MVz-QH-gCh" id="qzz-b9-iBt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZc-hS-rRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -767,9 +774,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
