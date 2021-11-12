@@ -2,16 +2,17 @@
 //  StudentTableViewCell.swift
 //  PrepanetMindful
 //
-//  Created by Cristian Omar Urbina Herrera on 04/11/21.
+//  Created by user202610 on 11/11/21.
 //
 
 import UIKit
 
 class StudentTableViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var lbId: UILabel!
-    @IBOutlet weak var lbUser: UILabel!
-    @IBOutlet weak var lbStatus: UILabel!
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var statusCircle: UIImageView!
+    @IBOutlet weak var lbStatusLetter: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
