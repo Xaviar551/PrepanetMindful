@@ -533,7 +533,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oEu-gS-lWg">
                                 <rect key="frame" x="0.0" y="467" width="414" height="395"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCourseCell" rowHeight="91" id="l0q-ce-G0a" customClass="ProfileCourseTableViewCell" customModule="PrepanetMindful" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="91"/>
@@ -591,7 +591,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="BGJ-p2-Mjc" firstAttribute="centerY" secondItem="v1x-yb-J43" secondAttribute="centerY" id="AWP-PW-kPl"/>
                                                         <constraint firstAttribute="trailing" secondItem="e0K-9F-ogU" secondAttribute="trailing" constant="16" id="BN8-F7-bve"/>
@@ -881,7 +881,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="PrepanetLogo" width="200" height="200"/>
+        <image name="PrepanetLogo" width="1222" height="807"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.forward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
