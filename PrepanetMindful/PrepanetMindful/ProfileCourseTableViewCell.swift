@@ -35,6 +35,8 @@ class ProfileCourseTableViewCell: UITableViewCell {
         vwMainBackground.layer.shadowOffset = CGSize(width: 0, height: 4)
         vwMainBackground.layer.shadowRadius = 2.0
         vwMainBackground.layer.shadowPath = UIBezierPath(roundedRect: vwMainBackground.bounds, cornerRadius: 10).cgPath
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

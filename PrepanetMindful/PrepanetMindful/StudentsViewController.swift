@@ -30,9 +30,12 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
+        tableView.reloadData()
     }
     
 
@@ -55,13 +58,28 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         cell.lbId.text = students[indexPath.row].id
         cell.lbName.text = students[indexPath.row].name
-        cell.lbStatusLetter.text = Int.random(in: 1...3) == 1 ? "A" : "NA"
+        
+        let status = Int.random(in: 0...2)
+        switch status {
+        case 0:
+            cell.lbStatusLetter.text = "A"
+            cell.statusCircle.tintColor = .systemBlue
+        case 1:
+            cell.lbStatusLetter.text = "NA"
+            cell.statusCircle.tintColor = .systemRed
+        case 2:
+            cell.lbStatusLetter.text = "C"
+            cell.statusCircle.tintColor = .systemYellow
+        default:
+            cell.lbStatusLetter.text = "P"
+            cell.statusCircle.tintColor = .systemGray
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 62
+        return 54
     }
 
 }
