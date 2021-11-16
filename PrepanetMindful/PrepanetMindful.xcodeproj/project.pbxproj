@@ -13,6 +13,7 @@
 		3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9E92721D06000FA88FE /* Main.storyboard */; };
 		3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EC2721D06100FA88FE /* Assets.xcassets */; };
 		3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */; };
+		783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */; };
 		8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */; };
 		8D0D7CC02734459D0035F302 /* ProfileCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */; };
 		8D5C05712734257700603A5C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C05702734257700603A5C /* Student.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.debug.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.debug.xcconfig"; sourceTree = "<group>"; };
 		3B07F9E02721D06000FA88FE /* PrepanetMindful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrepanetMindful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B07F9E32721D06000FA88FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B07F9E52721D06000FA88FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		3B07F9EC2721D06100FA88FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B07F9EF2721D06100FA88FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B07F9F12721D06100FA88FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrepanetMindful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.release.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.release.xcconfig"; sourceTree = "<group>"; };
 		8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCourseTableViewCell.swift; sourceTree = "<group>"; };
 		8D5C05702734257700603A5C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,8 @@
 			children = (
 				3B07F9E22721D06000FA88FE /* PrepanetMindful */,
 				3B07F9E12721D06000FA88FE /* Products */,
+				6CB9C90A5FEC08A4A55680A4 /* Pods */,
+				B667773756D5DB38AA5893F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +104,24 @@
 			path = PrepanetMindful;
 			sourceTree = "<group>";
 		};
+		6CB9C90A5FEC08A4A55680A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */,
+				5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B667773756D5DB38AA5893F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B07F9F42721D06100FA88FE /* Build configuration list for PBXNativeTarget "PrepanetMindful" */;
 			buildPhases = (
+				7DF659D0D562B304BCADEC1D /* [CP] Check Pods Manifest.lock */,
 				3B07F9DC2721D06000FA88FE /* Sources */,
 				3B07F9DD2721D06000FA88FE /* Frameworks */,
 				3B07F9DE2721D06000FA88FE /* Resources */,
+				5EF21AAFE92375CE8577492D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EF21AAFE92375CE8577492D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF659D0D562B304BCADEC1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrepanetMindful-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3B07F9DC2721D06000FA88FE /* Sources */ = {
@@ -323,6 +392,7 @@
 		};
 		3B07F9F52721D06100FA88FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,6 +411,7 @@
 		};
 		3B07F9F62721D06100FA88FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

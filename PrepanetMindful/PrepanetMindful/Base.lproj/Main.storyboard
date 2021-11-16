@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgr-Iq-k0K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p6Y-FO-zAb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -316,12 +316,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus Monterrey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgs-Lw-hcf">
-                                <rect key="frame" x="16" y="112" width="250" height="34"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVz-QH-gCh">
                                 <rect key="frame" x="12" y="183" width="390" height="48"/>
                                 <subviews>
@@ -467,19 +461,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-i8-HQa">
+                                <rect key="frame" x="16" y="112" width="382" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Campus Monterrey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgs-Lw-hcf">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="4zC-p7-hTR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kUL-84-7M7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fgs-Lw-hcf" firstAttribute="top" secondItem="kUL-84-7M7" secondAttribute="top" constant="24" id="0vw-JO-YNJ"/>
                             <constraint firstItem="BUq-kj-08z" firstAttribute="trailing" secondItem="kUL-84-7M7" secondAttribute="trailing" id="5JO-i7-t6W"/>
+                            <constraint firstItem="gdv-i8-HQa" firstAttribute="top" secondItem="kUL-84-7M7" secondAttribute="top" constant="24" id="60s-n2-vsC"/>
                             <constraint firstItem="kUL-84-7M7" firstAttribute="trailing" secondItem="MVz-QH-gCh" secondAttribute="trailing" constant="12" id="6KP-07-ve5"/>
+                            <constraint firstItem="jck-ps-zrC" firstAttribute="top" secondItem="gdv-i8-HQa" secondAttribute="bottom" id="86t-b9-nNP"/>
                             <constraint firstItem="BUq-kj-08z" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" id="8Zj-rz-kRU"/>
+                            <constraint firstItem="gdv-i8-HQa" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" constant="16" id="Ara-2B-6Ah"/>
                             <constraint firstItem="BUq-kj-08z" firstAttribute="top" secondItem="MVz-QH-gCh" secondAttribute="bottom" constant="2" id="DEc-CI-cSo"/>
-                            <constraint firstItem="Fgs-Lw-hcf" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" constant="16" id="RNp-vY-qzu"/>
                             <constraint firstItem="jck-ps-zrC" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" constant="16" id="Vn4-kO-XdV"/>
                             <constraint firstItem="MVz-QH-gCh" firstAttribute="top" secondItem="jck-ps-zrC" secondAttribute="bottom" constant="16" id="iVi-in-7no"/>
-                            <constraint firstItem="jck-ps-zrC" firstAttribute="top" secondItem="Fgs-Lw-hcf" secondAttribute="bottom" id="qXg-OU-h9n"/>
+                            <constraint firstItem="kUL-84-7M7" firstAttribute="trailing" secondItem="gdv-i8-HQa" secondAttribute="trailing" constant="16" id="ugw-iv-gJu"/>
                             <constraint firstItem="MVz-QH-gCh" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" constant="12" id="wFz-8p-V7U"/>
                             <constraint firstItem="BUq-kj-08z" firstAttribute="bottom" secondItem="kUL-84-7M7" secondAttribute="bottom" id="yG9-Kh-nTH"/>
                         </constraints>
@@ -490,6 +501,7 @@
                         <outlet property="lbPeriod" destination="jck-ps-zrC" id="uhw-TT-Ym3"/>
                         <outlet property="tableView" destination="BUq-kj-08z" id="F9b-6B-4yW"/>
                         <outlet property="tfSearch" destination="hWc-gW-Uz9" id="LJu-59-mTP"/>
+                        <outlet property="vwCampusBackground" destination="gdv-i8-HQa" id="Pug-v4-ycM"/>
                         <outlet property="vwSearchBackground" destination="MVz-QH-gCh" id="qzz-b9-iBt"/>
                         <segue destination="Kgr-Iq-k0K" kind="show" id="XxG-Zi-iWV"/>
                     </connections>

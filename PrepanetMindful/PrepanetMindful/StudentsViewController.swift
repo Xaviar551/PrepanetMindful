@@ -5,11 +5,13 @@
 //  Created by user202610 on 11/11/21.
 //
 
+import DropDown
 import UIKit
 
 class StudentsViewController: UIViewController, UITableViewDataSource,
     UITableViewDelegate {
     
+    @IBOutlet weak var vwCampusBackground: UIView!
     @IBOutlet weak var lbCampus: UILabel!
     @IBOutlet weak var lbPeriod: UILabel!
     @IBOutlet weak var vwSearchBackground: UIView!
@@ -17,6 +19,12 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tableView: UITableView!
     
     // var students: [Student] = []
+    
+    let menu: DropDown = {
+        let menu = DropDown()
+        menu.dataSource = ["Monterrey", "Guadalajara"]
+        return menu
+    }()
     
     var students = [
         Student(id:"A07045937" , name: "Fernanada Gonzalez Jimenez" , campus: "CSF"),
@@ -35,7 +43,22 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
 
         // Do any additional setup after loading the view.
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
-        tableView.reloadData()
+        
+        menu.anchorView = vwCampusBackground
+        menu.bottomOffset = CGPoint(x: 0, y: (menu.anchorView?.plainView.bounds.height)!)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapItem))
+        gesture.numberOfTapsRequired = 1
+        gesture.numberOfTouchesRequired = 1
+        vwCampusBackground.addGestureRecognizer(gesture)
+        
+        menu.selectionAction = { index, title in
+            self.lbCampus.text = "Campus \(title)"
+        }
+    }
+    
+    @objc func didTapItem() {
+        menu.show()
     }
     
 
