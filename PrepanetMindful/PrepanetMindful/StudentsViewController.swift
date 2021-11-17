@@ -22,7 +22,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     
     let menu: DropDown = {
         let menu = DropDown()
-        menu.dataSource = ["Monterrey", "Guadalajara"]
+        menu.dataSource = ["Monterrey", "Guadalajara", "Santa Fe", "Cuernavaca", "Ciudad de México"]
         return menu
     }()
     
