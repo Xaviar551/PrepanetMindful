@@ -18,6 +18,7 @@
 		3B79055B27230E4E001E7ECD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3B79055A27230E4E001E7ECD /* FirebaseFirestore */; };
 		3B79055D27230E4E001E7ECD /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3B79055C27230E4E001E7ECD /* FirebaseDatabase */; };
 		D99328A4272F829C008FAB95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D99328A3272F829C008FAB95 /* GoogleService-Info.plist */; };
+		EB1C03152731B51100A02807 /* PrepanetMindfulModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1C03142731B51100A02807 /* PrepanetMindfulModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3B07F9EF2721D06100FA88FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B07F9F12721D06100FA88FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99328A3272F829C008FAB95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EB1C03142731B51100A02807 /* PrepanetMindfulModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepanetMindfulModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3B07F9E32721D06000FA88FE /* AppDelegate.swift */,
 				3B07F9E52721D06000FA88FE /* SceneDelegate.swift */,
 				3B07F9E72721D06000FA88FE /* ViewController.swift */,
+				EB1C03142731B51100A02807 /* PrepanetMindfulModel.swift */,
 				3B07F9E92721D06000FA88FE /* Main.storyboard */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1C03152731B51100A02807 /* PrepanetMindfulModel.swift in Sources */,
 				3B07F9E82721D06000FA88FE /* ViewController.swift in Sources */,
 				3B07F9E42721D06000FA88FE /* AppDelegate.swift in Sources */,
 				3B07F9E62721D06000FA88FE /* SceneDelegate.swift in Sources */,
