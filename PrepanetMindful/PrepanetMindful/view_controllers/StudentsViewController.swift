@@ -18,6 +18,8 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tfSearch: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    var student: Student!
+    
     // var students: [Student] = []
     
     let menu: DropDown = {
@@ -26,21 +28,16 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         return menu
     }()
     
-    //var students
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
         dropDownSetup()
     }
     
-    @objc func didTapItem() {
-        menu.show()
-    }
+    @objc func didTapItem() { menu.show() }
     
     func dropDownSetup() {
         menu.anchorView = vwCampusBackground
@@ -57,15 +54,19 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     }
     
 
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let nextView = segue.destination as! ProfileViewController
+        nextView.student = student
     }
-    */
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        student = students[indexPath.row]
+        performSegue(withIdentifier: "showStudent", sender: self)
+    }
+    
+    // MARK: - Custom Cell
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return students.count
@@ -76,9 +77,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         cell.lbId.text = students[indexPath.row].id
         cell.lbName.text = students[indexPath.row].name
-        
-        let status = Int.random(in: 0...2)
-        cell.setStatus(status: status)
+        cell.setStatus(status: Int.random(in: 0...2))
         
         return cell
     }

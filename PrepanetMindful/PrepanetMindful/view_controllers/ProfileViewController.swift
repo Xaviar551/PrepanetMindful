@@ -21,8 +21,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        student = Student(id: "A01283165", name: "Ricardo Rodriguez Rodriguez", campus: "Monterrey")
-        
         lbStudentName.text = student.name
         lbStudentId.text = student.id
         lbStudentPeriod.text = "Inscrito"
@@ -30,6 +28,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         lbStudentCampus.text = student.campus
     }
     
+    // MARK: - Custom Cell
+    
+    // Tamaño de celda con estatus de los cursos
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
@@ -43,9 +44,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
-        
-        let status = Int.random(in: 0...2)
-        cell.setStatus(status: status)
+        cell.setStatus(status: Int.random(in: 0...2))
 
         return cell
     }

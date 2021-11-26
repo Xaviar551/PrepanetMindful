@@ -49,12 +49,12 @@ class CoursesTableViewController: UITableViewController {
         return 120
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        course = courses[indexPath.row]
         if typeOfUser != "admin" {
-            course=courses[indexPath.row]
-            performSegue(withIdentifier: "showCourse", sender: tableView.cellForRow(at: indexPath))
+            performSegue(withIdentifier: "showCourse", sender: self)
         } else {
-            performSegue(withIdentifier: "showStudents", sender: tableView.cellForRow(at: indexPath))
+            performSegue(withIdentifier: "showStudents", sender: self)
         }
     }
     
@@ -73,7 +73,10 @@ class CoursesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCourse" {
             let nextView = segue.destination as! CourseDetailViewController
-            nextView.course=course
+            nextView.course = course
+        } else {
+            let nextView = segue.destination as! StudentsViewController
+            nextView.title = course.name
         }
         
     }
