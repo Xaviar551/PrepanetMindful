@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,14 +16,13 @@
 		783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */; };
 		8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */; };
 		8D0D7CC02734459D0035F302 /* ProfileCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */; };
-		8D5C05712734257700603A5C /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5C05702734257700603A5C /* Student.swift */; };
-		8DDAFC922732930F00DF3BEC /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC912732930F00DF3BEC /* Course.swift */; };
 		BC1B7C61273E309B006391CC /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C60273E309B006391CC /* StudentsViewController.swift */; };
 		BC1B7C66273E3803006391CC /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */; };
 		BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7516BB2734CBA300E93E68 /* Colors.xcassets */; };
 		BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */; };
 		BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */; };
 		BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */; };
+		D90E71722744BB160026779F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E71712744BB160026779F /* ViewUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +39,13 @@
 		5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.release.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.release.xcconfig"; sourceTree = "<group>"; };
 		8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCourseTableViewCell.swift; sourceTree = "<group>"; };
-		8D5C05702734257700603A5C /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		8DDAFC912732930F00DF3BEC /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		BC1B7C60273E309B006391CC /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		BC7516BB2734CBA300E93E68 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
 		BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		D90E71712744BB160026779F /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,23 +81,16 @@
 		3B07F9E22721D06000FA88FE /* PrepanetMindful */ = {
 			isa = PBXGroup;
 			children = (
+				D90E71792744BD690026779F /* utils */,
+				D90E71782744BCC80026779F /* custom_cell_controllers */,
+				D90E71772744BCA30026779F /* view_controllers */,
 				3B07F9E32721D06000FA88FE /* AppDelegate.swift */,
 				3B07F9E52721D06000FA88FE /* SceneDelegate.swift */,
-				3B07F9E72721D06000FA88FE /* ViewController.swift */,
 				3B07F9E92721D06000FA88FE /* Main.storyboard */,
-				BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */,
-				BC1B7C60273E309B006391CC /* StudentsViewController.swift */,
-				8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */,
-				8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */,
-				8D5C05702734257700603A5C /* Student.swift */,
-				BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */,
-				BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */,
 				BC7516BB2734CBA300E93E68 /* Colors.xcassets */,
-				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
 				3B07F9F12721D06100FA88FE /* Info.plist */,
-				8DDAFC912732930F00DF3BEC /* Course.swift */,
 			);
 			path = PrepanetMindful;
 			sourceTree = "<group>";
@@ -110,7 +101,6 @@
 				18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */,
 				5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -120,6 +110,36 @@
 				3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D90E71772744BCA30026779F /* view_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC1B7C60273E309B006391CC /* StudentsViewController.swift */,
+				8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */,
+				BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */,
+				3B07F9E72721D06000FA88FE /* ViewController.swift */,
+				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
+			);
+			path = view_controllers;
+			sourceTree = "<group>";
+		};
+		D90E71782744BCC80026779F /* custom_cell_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */,
+				8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */,
+				BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */,
+			);
+			path = custom_cell_controllers;
+			sourceTree = "<group>";
+		};
+		D90E71792744BD690026779F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D90E71712744BB160026779F /* ViewUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,8 +259,7 @@
 			files = (
 				BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */,
 				3B07F9E82721D06000FA88FE /* ViewController.swift in Sources */,
-				8DDAFC922732930F00DF3BEC /* Course.swift in Sources */,
-				8D5C05712734257700603A5C /* Student.swift in Sources */,
+				D90E71722744BB160026779F /* ViewUtils.swift in Sources */,
 				3B07F9E42721D06000FA88FE /* AppDelegate.swift in Sources */,
 				BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */,
 				8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */,

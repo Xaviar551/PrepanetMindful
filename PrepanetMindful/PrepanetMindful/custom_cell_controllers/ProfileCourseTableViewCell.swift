@@ -16,6 +16,21 @@ class ProfileCourseTableViewCell: UITableViewCell {
     @IBOutlet weak var imgStatusCircle: UIImageView!
     @IBOutlet weak var lbStatus: UILabel!
     
+    let statusTexts = [
+        "A",
+        "NA",
+        "C"
+    ]
+    let statusTextFull = [
+        "Acreditado",
+        "No Acreditado",
+        "Cursando"
+    ]
+    let statusColors:[UIColor]=[
+        .systemBlue,
+        .systemRed,
+        .systemYellow
+    ]
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,6 +58,23 @@ class ProfileCourseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setStatus(status: Int) {
+        lbStatus.text = "Proximo"
+        lbStatusCode.text = "P"
+        lbStatus.textColor = .systemGray
+        imgStatusCircle.tintColor = .systemGray
+        vwStatusLeftBar.backgroundColor = .systemGray
+        
+        if((0...2).contains(status)){
+            lbStatus.text = statusTextFull[status]
+            lbStatusCode.text = statusTexts[status]
+            lbStatus.textColor = statusColors[status]
+            imgStatusCircle.tintColor = statusColors[status]
+            vwStatusLeftBar.backgroundColor = statusColors[status]
+            
+        }
     }
 
 }

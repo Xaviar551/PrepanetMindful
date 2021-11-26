@@ -24,12 +24,16 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // container.round(cornerRadius: 25.0, borderWidth: 2.0, borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+        // Esquinas redondas
         container.layer.cornerRadius = 25.0
+        
+        //
         container.layer.shadowColor = UIColor.black.cgColor
         container.layer.shadowOpacity = 0.3
         container.layer.shadowOffset = CGSize(width: 2, height: 3)
         container.layer.shadowRadius = 4.0
         container.layer.shadowPath = UIBezierPath(roundedRect: container.bounds.insetBy(dx: -3, dy: -4), cornerRadius: 25).cgPath
+        
         container.clipsToBounds = false
         
         vwUser.round(cornerRadius: vwUser.frame.size.height/2, borderWidth: 1.0, borderColor: UIColor.systemGray)

@@ -26,15 +26,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         return menu
     }()
     
-    var students = [
-        Student(id:"A07045937" , name: "Fernanada Gonzalez Jimenez" , campus: "CSF"),
-        Student(id:"A07045938" , name: "Johan Gadiel Garcia Marin", campus: "CSF"),
-        Student(id:"A07045939" , name: "Abishai Enrique Del Castillo Vega", campus: "CSF"),
-        Student(id:"A07045940" , name: "Daniela Cristal Lorenzo Blas", campus: "PUE"),
-        Student(id:"A07045941" , name: "Abril Estefania Tun Kun", campus: "PUE"),
-        Student(id:"A07045942" , name: "Edgar Leonardo Nuñez Garcia" , campus: "PUE"),
-        Student(id:"A07045943" , name: "Nathali Guzman Santos", campus: "PUE"),
-    ]
+    //var students
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +35,14 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
 
         // Do any additional setup after loading the view.
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
-        
+        dropDownSetup()
+    }
+    
+    @objc func didTapItem() {
+        menu.show()
+    }
+    
+    func dropDownSetup() {
         menu.anchorView = vwCampusBackground
         menu.bottomOffset = CGPoint(x: 0, y: (menu.anchorView?.plainView.bounds.height)!)
         
@@ -55,10 +54,6 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         menu.selectionAction = { index, title in
             self.lbCampus.text = "Campus \(title)"
         }
-    }
-    
-    @objc func didTapItem() {
-        menu.show()
     }
     
 
@@ -83,20 +78,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         cell.lbName.text = students[indexPath.row].name
         
         let status = Int.random(in: 0...2)
-        switch status {
-        case 0:
-            cell.lbStatusLetter.text = "A"
-            cell.statusCircle.tintColor = .systemBlue
-        case 1:
-            cell.lbStatusLetter.text = "NA"
-            cell.statusCircle.tintColor = .systemRed
-        case 2:
-            cell.lbStatusLetter.text = "C"
-            cell.statusCircle.tintColor = .systemYellow
-        default:
-            cell.lbStatusLetter.text = "P"
-            cell.statusCircle.tintColor = .systemGray
-        }
+        cell.setStatus(status: status)
         
         return cell
     }

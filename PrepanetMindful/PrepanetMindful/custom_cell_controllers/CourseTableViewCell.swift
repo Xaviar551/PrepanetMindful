@@ -16,6 +16,20 @@ class CourseTableViewCell: UITableViewCell {
     @IBOutlet weak var imgCourseIcon: UIImageView!
     @IBOutlet weak var mainBackground: UIView!
     
+    
+    var statusMap = [
+        "Acreditado" : 0,
+        "No Acreditado": 1,
+        "Cursando": 2
+    ]
+    
+    let textColors:[UIColor]=[.systemBlue, .systemRed, .systemYellow]
+    let images:[UIImage?]=[
+        UIImage(systemName: "checkmark"),
+        UIImage(systemName: "exclamationmark.circle.fill"),
+        UIImage(systemName: "star.fill")
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,6 +55,36 @@ class CourseTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setStatus(status: String) {
+        lbCourseStatus.textColor = .systemGray
+        imgStatus.image = nil
+        if let st=statusMap[status]{
+            lbCourseStatus.textColor = textColors[st]
+            imgStatus.image = images[st]
+            imgStatus.tintColor = textColors[st]
+        }
+        
+        
+        /*
+        switch status {
+        case "Acreditado":
+            lbCourseStatus.textColor = .systemBlue
+            imgStatus.image = UIImage(systemName: "checkmark")
+            imgStatus.tintColor = .systemBlue
+        case "No Acreditado":
+            lbCourseStatus.textColor = .systemRed
+            imgStatus.image = UIImage(systemName: "exclamationmark.circle.fill")
+            imgStatus.tintColor = .systemRed
+        case "Cursando":
+            lbCourseStatus.textColor = .systemYellow
+            imgStatus.image = UIImage(systemName: "star.fill")
+            imgStatus.tintColor = .systemYellow
+        default:
+            lbCourseStatus.textColor = .systemGray
+            i mgStatus.image = nil
+        }*/
     }
 
 }
