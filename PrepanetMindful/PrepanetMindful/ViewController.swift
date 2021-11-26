@@ -21,10 +21,13 @@ class ViewController: UIViewController {
         let docRef=db.document("PrepanetMindful/prueba")
         docRef.setData(["texto": text])
     }
+    @IBAction func onSecondButtonPressed(_ sender: Any) {
+        let model=PrepanetMindfulModel()
+        
+    }
     
     @IBAction func onButtonPressed(_ sender: Any) {
         let model=PrepanetMindfulModel()
-        print(model.getUid())
         //iniciarSesion(usuario: "prietojavi551@gmail.com", contrasena: "dummypass1234")
         //Auth.auth().signIn(withEmail: "prietojavi551@gmail.com", password: "dummypass1234"){ [weak self] authResult, error in
         //    guard let strongSelf = self else {
