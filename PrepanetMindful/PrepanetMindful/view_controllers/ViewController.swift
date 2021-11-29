@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var vwUser: UIView!
     @IBOutlet weak var vwPassword: UIView!
-    
+    var userType: String=""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +49,28 @@ class ViewController: UIViewController {
     @IBAction func hideKeyboard(_ sender: Any) {
         view.endEditing(true)
     }
+    func loginSegue(userType: String) -> Void{
+        self.userType=userType
+        performSegue(withIdentifier: "loginToCourses", sender: self)
+        
+    }
+    @IBAction func loginPressed(_ sender: Any) {
+        let model=PrepanetMindfulModel()
+        model.iniciarSesion(usuario: tfUser.text!, contrasena: tfPassword.text!,loginSegue,{
+            () in
+            self.mostrarError("Error de Inicio de Sesion", "El usuario y/o contrasena son incorrectos.")
+        })
+    }
+    private func mostrarError(_ title: String, _ mensaje: String){
+        let alerta=UIAlertController(title: title, message: mensaje, preferredStyle: .alert)
+        let botonOK=UIAlertAction(title:"OK",style: .cancel, handler: nil)
+        alerta.addAction(botonOK)
+        present(alerta, animated:true, completion: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextView = segue.destination as! CoursesTableViewController
-        nextView.typeOfUser = tfUser.text
+        nextView.typeOfUser = userType
     }
 }
 

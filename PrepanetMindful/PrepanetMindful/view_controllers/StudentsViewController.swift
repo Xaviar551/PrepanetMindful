@@ -5,6 +5,7 @@
 //  Created by user202610 on 11/11/21.
 //
 
+
 import DropDown
 import UIKit
 
@@ -20,6 +21,8 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     
     // var students: [Student] = []
     
+    var courseIndex: Int!
+    var studentList: [StudentCourse]=[]
     let menu: DropDown = {
         let menu = DropDown()
         menu.dataSource = ["Monterrey", "Guadalajara", "Santa Fe", "Cuernavaca", "Ciudad de México"]
@@ -32,10 +35,23 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
 
         // Do any additional setup after loading the view.
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
         dropDownSetup()
+        
+        
+        let model=PrepanetMindfulModel()
+        model.obtenerListaDeAlumnos(curso: courseIndex, campus: "1",{(studentsC:[StudentCourse]) in
+            print("count:")
+            print(studentsC)
+            for studentC in studentsC{
+                self.studentList.append(studentC)
+                self.tableView.reloadData()
+            }
+        })
     }
     
     @objc func didTapItem() {
@@ -68,21 +84,29 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return studentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellStudent", for: indexPath) as! StudentTableViewCell
         
-        cell.lbId.text = students[indexPath.row].id
-        cell.lbName.text = students[indexPath.row].name
+        let student=studentList[indexPath.row]
+        cell.lbId.text = student.student.id
+        cell.lbName.text = student.student.name
         
-        let status = Int.random(in: 0...2)
-        cell.setStatus(status: status)
+        let status = "P"
+        cell.setStatus(status: student.userCourseResults[student.currentCourse].status)
+        
+        
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        courseIndex=indexPath.row+1
+        performSegue(withIdentifier: "showStudents", sender: tableView.cellForRow(at: indexPath))
+        
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 54
     }

@@ -35,13 +35,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        courses.count
+        defaultCourses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCourseCell", for: indexPath) as! ProfileCourseTableViewCell
 
-        let course = courses[indexPath.row]
+        let course = defaultCourses[indexPath.row]
         cell.lbCourseName.text = course.name
         
         let status = Int.random(in: 0...2)

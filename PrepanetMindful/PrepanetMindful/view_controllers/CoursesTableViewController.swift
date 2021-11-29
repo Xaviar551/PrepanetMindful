@@ -20,25 +20,79 @@ class CoursesTableViewController: UITableViewController {
         "6" : "calendar"
     ]
     
-    var course: Course!
+    var scourse: Course!
     
+    var canEnrol=false
+    var courses: [Course]=[]
+    var courseIndex=0
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(named: "DarkBlue")
+        /*(let model=PrepanetMindfulModel()
+        model.obtenerInformacionDeCursosUsuarioActual({
+            (userCourses: [Course])->Void in
+            self.courses=userCourses
+            self.tableView.reloadData()
+        })*/
+        self.reloadView()
+        //
+        NotificationCenter().addObserver(self,
+             selector: #selector(reloadView),
+             name: UIApplication.willEnterForegroundNotification,
+             object: nil)
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadView()
+    }
+    
     // MARK: - Table view data source
-
+    @objc func reloadView(){
+        let model=PrepanetMindfulModel()
+        model.obtenerInformacionDeCursosUsuarioActual({
+            (userCourses: [Course])->Void in
+            self.courses=userCourses
+            if self.typeOfUser=="admin"{
+                for course in self.courses{
+                    course.status=""
+                }
+                model.obetenerCuentaAlumnosInscritosNacional({(cuenta: [Int]) in
+                    var i=0
+                    for course in self.courses{
+                        course.status="Alumnos inscritos: "+String(cuenta[i])
+                        print(cuenta[i])
+                        i+=1
+                    }
+                    self.tableView.reloadData()
+                })
+            }
+            else{
+                self.tableView.reloadData()
+            }
+        })
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return courses.count
     }
-
+    let mapStatusToStatusN=[
+        "A":"Acreditado",
+        "NA":"No Acreditado",
+        "C":"Cursando",
+        "I": "Inscrito",
+        "P": "Pendiente"
+    ]
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "courseCell", for: indexPath) as! CourseTableViewCell
 
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
-        cell.lbCourseStatus.text = course.status
+        if(mapStatusToStatusN[course.status] != nil){
+            cell.lbCourseStatus.text = mapStatusToStatusN[course.status]
+        }
+        else{
+            cell.lbCourseStatus.text = course.status
+        }
         cell.imgCourseIcon.image = UIImage(systemName: icons[course.id]!)
         cell.setStatus(status: course.status)
 
@@ -49,14 +103,29 @@ class CoursesTableViewController: UITableViewController {
         return 120
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if typeOfUser != "admin" {
-            course=courses[indexPath.row]
-            performSegue(withIdentifier: "showCourse", sender: tableView.cellForRow(at: indexPath))
+            scourse=courses[indexPath.row]
+            var currentCourse=0
+            for course in courses{
+                if course.status=="A"{
+                    currentCourse+=1
+                }
+            }
+            let model=PrepanetMindfulModel()
+            model.openEnrollment({
+                (isEnrollmentOpen: Bool) in
+                                    self.canEnrol = currentCourse==indexPath.row &&  isEnrollmentOpen && (self.scourse.status=="NA" || self.scourse.status=="P")
+                self.performSegue(withIdentifier: "showCourse", sender: tableView.cellForRow(at: indexPath))
+            })
+           
         } else {
+            courseIndex=indexPath.row
             performSegue(withIdentifier: "showStudents", sender: tableView.cellForRow(at: indexPath))
         }
     }
+    
+    
     
 
     // MARK: - Navigation
@@ -73,9 +142,13 @@ class CoursesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCourse" {
             let nextView = segue.destination as! CourseDetailViewController
-            nextView.course=course
+            nextView.course=scourse
+            nextView.canEnrol=canEnrol
         }
-        
+        else{
+            let nextView = segue.destination as! StudentsViewController
+            nextView.courseIndex=courseIndex
+        }
     }
     
 }

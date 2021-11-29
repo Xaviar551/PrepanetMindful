@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgr-Iq-k0K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gVm-Gx-Q6z">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-aT-V6Z">
                                 <rect key="frame" x="0.0" y="412" width="414" height="450"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="h5x-UU-h0J"/>
                                 </constraints>
@@ -49,7 +49,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-SR-e9l">
                                         <rect key="frame" x="24" y="506" width="336" height="64"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="backgroundColor" name="DarkBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="hMy-eF-a2s"/>
                                         </constraints>
@@ -58,7 +58,7 @@
                                             <color key="titleColor" systemColor="systemGray5Color"/>
                                         </state>
                                         <connections>
-                                            <segue destination="sJD-my-Hjp" kind="show" id="SUO-4O-JMz"/>
+                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L2G-t2-zld"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-fY-nKX">
@@ -174,6 +174,7 @@
                         <outlet property="tfUser" destination="or6-mb-tdB" id="UhE-wa-613"/>
                         <outlet property="vwPassword" destination="iQ1-Kd-Y5D" id="UCg-y5-J2w"/>
                         <outlet property="vwUser" destination="bbF-fY-nKX" id="Myd-Cd-XxG"/>
+                        <segue destination="sJD-my-Hjp" kind="show" identifier="loginToCourses" id="Zku-CI-F2V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -503,7 +504,6 @@
                         <outlet property="tfSearch" destination="hWc-gW-Uz9" id="LJu-59-mTP"/>
                         <outlet property="vwCampusBackground" destination="gdv-i8-HQa" id="Pug-v4-ycM"/>
                         <outlet property="vwSearchBackground" destination="MVz-QH-gCh" id="qzz-b9-iBt"/>
-                        <segue destination="Kgr-Iq-k0K" kind="show" id="XxG-Zi-iWV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZc-hS-rRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -519,7 +519,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-Ga-dlA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="128"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="128"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dxE-S3-Ooa">
                                         <rect key="frame" x="125" y="22.5" width="164" height="163"/>
@@ -538,13 +538,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ricardo Rodríguez Rodríguez" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wur-dy-kgg">
-                                <rect key="frame" x="80" y="272" width="254" height="57.5"/>
+                                <rect key="frame" x="80" y="228" width="254" height="57.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oEu-gS-lWg">
-                                <rect key="frame" x="0.0" y="467" width="414" height="395"/>
+                                <rect key="frame" x="0.0" y="423" width="414" height="439"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="profileCourseCell" rowHeight="91" id="l0q-ce-G0a" customClass="ProfileCourseTableViewCell" customModule="PrepanetMindful" customModuleProvider="target">
@@ -641,13 +641,13 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A01283165" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CR-c8-zs7">
-                                <rect key="frame" x="161" y="335.5" width="92.5" height="21.5"/>
+                                <rect key="frame" x="161" y="291.5" width="92.5" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWu-qh-MQ5">
-                                <rect key="frame" x="16" y="367" width="382" height="100"/>
+                                <rect key="frame" x="16" y="323" width="382" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Estatus académico:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6D-AC-YhP">
                                         <rect key="frame" x="0.0" y="8" width="159" height="21"/>
@@ -816,16 +816,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPo-lF-3kp">
+                            <button contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPo-lF-3kp">
                                 <rect key="frame" x="24" y="768" width="366" height="70"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Ejm-FZ-dj2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Inscribir">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled" title=" Bloqueado" image="lock" catalog="system"/>
+                                <connections>
+                                    <action selector="enrolAction:" destination="ICd-eI-q5z" eventType="touchUpInside" id="tK0-2M-39s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ybb-mI-kVv"/>
@@ -898,13 +902,14 @@
         <image name="chevron.forward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
         <image name="lock.fill" catalog="system" width="128" height="128"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.20000000000000001" green="0.28627450980392155" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

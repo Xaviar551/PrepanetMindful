@@ -14,15 +14,11 @@ class StudentTableViewCell: UITableViewCell {
     @IBOutlet weak var statusCircle: UIImageView!
     @IBOutlet weak var lbStatusLetter: UILabel!
     
-    let statusTexts = [
-        "A",
-        "NA",
-        "C"
-    ]
-    let statusColors:[UIColor]=[
-        .systemBlue,
-        .systemRed,
-        .systemYellow
+    let statusColors:[String : UIColor]=[
+        "A": .systemBlue,
+        "NA": .systemRed,
+        "I": .systemOrange,
+        "C": .systemYellow
     ]
     
     override func awakeFromNib() {
@@ -36,11 +32,10 @@ class StudentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setStatus(status: Int) {
-        lbStatusLetter.text = "P"
+    func setStatus(status: String) {
+        lbStatusLetter.text = status
         statusCircle.tintColor = .systemGray
-        if((0...2).contains(status)){
-            lbStatusLetter.text=statusTexts[status]
+        if(statusColors[status] != nil){
             statusCircle.tintColor=statusColors[status]
         }
     }

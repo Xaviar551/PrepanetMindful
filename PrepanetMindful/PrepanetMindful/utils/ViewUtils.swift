@@ -15,7 +15,14 @@ class Course: NSObject {
     var startDate: Date
     var finalDate: Date
     var courseDescription: String
-    
+    override init(){
+        self.id=""
+        self.name=""
+        self.status=""
+        self.startDate=Date()
+        self.finalDate=Date()
+        self.courseDescription=""
+    }
     init (id: String, name: String, status: String, startDate: Date, finalDate: Date, courseDescription: String) {
         self.id = id
         self.name = name
@@ -24,6 +31,10 @@ class Course: NSObject {
         self.finalDate = finalDate
         self.courseDescription = courseDescription
     }
+    override func copy()-> Any{
+        let cp=Course(id: id, name: name, status: status, startDate: startDate, finalDate: finalDate, courseDescription: courseDescription)
+        return cp
+    }
 }
 
 
@@ -31,7 +42,11 @@ class Student: NSObject {
     var id: String!
     var name: String!
     var campus: String!
-    
+    override init(){
+        id=""
+        name=""
+        campus=""
+    }
     init(id: String, name: String, campus: String) {
         self.id = id
         self.name = name
@@ -39,7 +54,7 @@ class Student: NSObject {
     }
 }
 
-var courses = [
+var defaultCourses = [
     Course(id: "1", name: "Liderazgo Positivo y Transformación Personal", status: "Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "En este taller aprenderás sobre cómo ser un líder y saber distinguir tus mejores cualidades."),
     Course(id: "2", name: "Mis habilidades y motivaciones", status: "No Acreditado", startDate: Date(), finalDate: Date(), courseDescription: "Prepárate para conocerte mejor a ti mismo, lo que eres capaz de hacer así como lo que te motiva."),
     Course(id: "3", name: "Mis emociones", status: "Cursando", startDate: Date(), finalDate: Date(), courseDescription: "Lorem"),
