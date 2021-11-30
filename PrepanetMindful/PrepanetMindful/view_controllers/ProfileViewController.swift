@@ -11,8 +11,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
    
     @IBOutlet weak var lbStudentName: UILabel!
     @IBOutlet weak var lbStudentId: UILabel!
-    @IBOutlet weak var lbStudentStatus: UILabel!
-    @IBOutlet weak var lbStudentPeriod: UILabel!
     @IBOutlet weak var lbStudentCampus: UILabel!
     
     var student : Student!
@@ -31,8 +29,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         lbStudentName.text = student.name
         lbStudentId.text = student.id
-        lbStudentPeriod.text = "Inscrito"
-        lbStudentPeriod.text = "Ago - Dic 2021"
         lbStudentCampus.text = student.campus
     }
     
@@ -54,8 +50,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.lbCourseName.text = course.name
         cell.setStatus(status: course.status)
         
-        
-
         return cell
     }
     

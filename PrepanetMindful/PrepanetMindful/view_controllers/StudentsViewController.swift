@@ -70,7 +70,7 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         
         let model=PrepanetMindfulModel()
-        model.obtenerListaDeAlumnos(curso: courseIndex, campus: "0",{(studentsC:[StudentCourse]) in
+        model.obtenerListaDeAlumnos(curso: courseIndex, campus: "1",{(studentsC:[StudentCourse]) in
             print("count:")
             print(studentsC)
             for studentC in studentsC{
