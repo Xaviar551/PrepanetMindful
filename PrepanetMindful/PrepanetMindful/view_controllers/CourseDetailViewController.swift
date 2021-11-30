@@ -20,11 +20,19 @@ class CourseDetailViewController: UIViewController {
     @IBOutlet weak var startStackView: UIStackView!
     @IBOutlet weak var finalStackView: UIStackView!
     
+    var canEnrol: Bool!
+        
     var course : Course!
-    
+    let mapStatusToStatusN=[
+        "A":"Acreditado",
+        "NA":"No Acreditado",
+        "C":"Cursando",
+        "I": "Inscrito",
+        "P": "Pendiente"
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        btnEnroll.isEnabled=canEnrol
         btnEnroll.layer.cornerRadius = btnEnroll.frame.size.height/2
         
         let spacerView = UIView()
@@ -40,7 +48,7 @@ class CourseDetailViewController: UIViewController {
         formatter.dateFormat = "MMM d, yyyy"
 
         lbCourseName.text = course.name
-        lbCourseStatus.text = course.status
+        lbCourseStatus.text = mapStatusToStatusN[course.status]
         lbStartDate.text = formatter.string(from: course.startDate)
         lbFinalDate.text = formatter.string(from: course.finalDate)
         lbDescriptionTxt.text = course.courseDescription
@@ -56,6 +64,20 @@ class CourseDetailViewController: UIViewController {
         default:
             lbCourseStatus.textColor = .systemGray
         }
+    }
+    @IBAction func enrolAction(_ sender: Any) {
+        let alerta=UIAlertController(title: "Inscripcion de curso", message: "¿Estas segur@ de que quieres inscribir el curso?", preferredStyle: .alert)
+        let botonOK=UIAlertAction(title:"Si",style: .default, handler: {action in
+            let model=PrepanetMindfulModel()
+            
+            model.registrarInscripcion(curso: self.course.id)
+            self.navigationController?.popViewController(animated: true)
+        })
+        let botonNo=UIAlertAction(title:"No",style: .cancel, handler: nil)
+        alerta.addAction(botonOK)
+        alerta.addAction(botonNo)
+        present(alerta, animated:true, completion: nil)
+        
     }
     
 

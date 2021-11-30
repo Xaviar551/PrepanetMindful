@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var lbStudentCampus: UILabel!
     
     var student : Student!
-    // var courses: [Course]!
+    var courses: [Course]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        courses.count
+        6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +44,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let course = courses[indexPath.row]
         cell.lbCourseName.text = course.name
-        cell.setStatus(status: Int.random(in: 0...2))
+        cell.setStatus(status: course.status)
+        
+        
 
         return cell
     }

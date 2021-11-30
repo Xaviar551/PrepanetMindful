@@ -20,21 +20,56 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     
     var student: Student!
     
-    // var students: [Student] = []
+    var courseIndex: Int!
+    var studentList: [StudentCourse]=[]
     
+    var renderedList: [StudentCourse]=[]
+    
+    var studentIndex = -1
+    
+    
+    @IBOutlet weak var searchButton: UIImageView!
     let menu: DropDown = {
         let menu = DropDown()
         menu.dataSource = ["Monterrey", "Guadalajara", "Santa Fe", "Cuernavaca", "Ciudad de México"]
         return menu
     }()
-    
+    func filter(searchId: String, students: [StudentCourse]) -> [StudentCourse] {
+            let regex = "\(searchId)[a-zA-Z0-9]*"
+            return students.filter({
+                return $0.student.id.matches(regex)
+            })
+        }
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+        renderedList=filter(searchId: tfSearch.text!,
+                            students: studentList)
+        self.tableView.reloadData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(gesture:)))
+        searchButton.addGestureRecognizer(tapGesture)
+        searchButton.isUserInteractionEnabled=true
+        
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
+        
+        // if usario.nacional
         dropDownSetup()
+        
+        
+        
+        let model=PrepanetMindfulModel()
+        model.obtenerListaDeAlumnos(curso: courseIndex, campus: "0",{(studentsC:[StudentCourse]) in
+            print("count:")
+            print(studentsC)
+            for studentC in studentsC{
+                self.studentList.append(studentC)
+                self.renderedList=self.studentList
+                self.tableView.reloadData()
+            }
+        })
     }
     
     @objc func didTapItem() { menu.show() }
@@ -50,34 +85,43 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         menu.selectionAction = { index, title in
             self.lbCampus.text = "Campus \(title)"
+            
+            
+            
         }
     }
     
-
+    @IBAction func hideKeyboard(_ sender: Any) {
+        view.endEditing(true)
+    }
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nextView = segue.destination as! ProfileViewController
-        nextView.student = student
+        nextView.student = renderedList[studentIndex].student
+        nextView.courses = renderedList[studentIndex].userCourseResults
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        student = students[indexPath.row]
+        studentIndex = indexPath.row
         performSegue(withIdentifier: "showStudent", sender: self)
     }
     
     // MARK: - Custom Cell
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return students.count
+        return renderedList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellStudent", for: indexPath) as! StudentTableViewCell
+                
+        let cstudent=renderedList[indexPath.row]
+        cell.lbId.text = cstudent.student.id
+        cell.lbName.text = cstudent.student.name
         
-        cell.lbId.text = students[indexPath.row].id
-        cell.lbName.text = students[indexPath.row].name
-        cell.setStatus(status: Int.random(in: 0...2))
+        cell.setStatus(status: cstudent.userCourseResults[cstudent.currentCourse].status)
+    
         
         return cell
     }

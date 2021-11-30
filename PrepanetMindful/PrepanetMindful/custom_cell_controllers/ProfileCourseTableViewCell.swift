@@ -16,6 +16,11 @@ class ProfileCourseTableViewCell: UITableViewCell {
     @IBOutlet weak var imgStatusCircle: UIImageView!
     @IBOutlet weak var lbStatus: UILabel!
     
+    var statusMap = [
+            "A" : 0,
+            "NA": 1,
+            "C": 2
+        ]
     let statusTexts = [
         "A",
         "NA",
@@ -25,6 +30,13 @@ class ProfileCourseTableViewCell: UITableViewCell {
         "Acreditado",
         "No Acreditado",
         "Cursando"
+    ]
+    let statusToFullName: [String: String]=[
+        "P": "Pendiente",
+        "I": "Inscrito",
+        "C": "Cursando",
+        "A": "Acreditado",
+        "NA": "No Acreditado"
     ]
     let statusColors:[UIColor]=[
         .systemBlue,
@@ -60,19 +72,23 @@ class ProfileCourseTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setStatus(status: Int) {
-        lbStatus.text = "Proximo"
-        lbStatusCode.text = "P"
+    func setStatus(status: String) {
+        
+        
+        lbStatus.text = statusToFullName[status]
+        lbStatusCode.text = status
         lbStatus.textColor = .systemGray
         imgStatusCircle.tintColor = .systemGray
         vwStatusLeftBar.backgroundColor = .systemGray
         
-        if((0...2).contains(status)){
-            lbStatus.text = statusTextFull[status]
-            lbStatusCode.text = statusTexts[status]
-            lbStatus.textColor = statusColors[status]
-            imgStatusCircle.tintColor = statusColors[status]
-            vwStatusLeftBar.backgroundColor = statusColors[status]
+        
+        if(statusMap[status] != nil ){
+            let mapped=statusMap[status]!
+            //lbStatus.text = statusTextFull[mapped]
+            //lbStatusCode.text = statusTexts[mapped]
+            lbStatus.textColor = statusColors[mapped]
+            imgStatusCircle.tintColor = statusColors[mapped]
+            vwStatusLeftBar.backgroundColor = statusColors[mapped]
             
         }
     }

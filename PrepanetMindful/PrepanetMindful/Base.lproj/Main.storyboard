@@ -19,7 +19,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-aT-V6Z">
                                 <rect key="frame" x="0.0" y="412" width="414" height="450"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="h5x-UU-h0J"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Buc-SR-e9l">
                                         <rect key="frame" x="24" y="506" width="336" height="64"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="backgroundColor" name="DarkBlue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="hMy-eF-a2s"/>
                                         </constraints>
@@ -56,7 +56,7 @@
                                             <color key="titleColor" systemColor="systemGray5Color"/>
                                         </state>
                                         <connections>
-                                            <segue destination="sJD-my-Hjp" kind="show" id="SUO-4O-JMz"/>
+                                            <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z4L-p6-bih"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-fY-nKX">
@@ -172,6 +172,7 @@
                         <outlet property="tfUser" destination="or6-mb-tdB" id="UhE-wa-613"/>
                         <outlet property="vwPassword" destination="iQ1-Kd-Y5D" id="UCg-y5-J2w"/>
                         <outlet property="vwUser" destination="bbF-fY-nKX" id="Myd-Cd-XxG"/>
+                        <segue destination="sJD-my-Hjp" kind="show" identifier="loginToCourses" id="Say-dK-Auj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,13 +225,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="IPV-pf-5kU">
                                                     <rect key="frame" x="76" y="32" width="282" height="44.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis emociones" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-RD-3Vp">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mis emociones" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hc4-RD-3Vp">
                                                             <rect key="frame" x="0.0" y="0.0" width="282" height="24"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acreditado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMV-UB-q1O">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Acreditado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMV-UB-q1O">
                                                             <rect key="frame" x="0.0" y="25" width="282" height="19.5"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                             <color key="textColor" systemColor="systemBlueColor"/>
@@ -494,11 +495,15 @@
                             <constraint firstItem="MVz-QH-gCh" firstAttribute="leading" secondItem="kUL-84-7M7" secondAttribute="leading" constant="12" id="wFz-8p-V7U"/>
                             <constraint firstItem="BUq-kj-08z" firstAttribute="bottom" secondItem="kUL-84-7M7" secondAttribute="bottom" id="yG9-Kh-nTH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qYo-g3-cmy" appends="YES" id="9iJ-TR-FGd"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Wef-q1-Spq"/>
                     <connections>
                         <outlet property="lbCampus" destination="Fgs-Lw-hcf" id="RYs-UE-KRW"/>
                         <outlet property="lbPeriod" destination="jck-ps-zrC" id="uhw-TT-Ym3"/>
+                        <outlet property="searchButton" destination="5sW-sY-hoY" id="ylu-Hv-HA5"/>
                         <outlet property="tableView" destination="BUq-kj-08z" id="F9b-6B-4yW"/>
                         <outlet property="tfSearch" destination="hWc-gW-Uz9" id="LJu-59-mTP"/>
                         <outlet property="vwCampusBackground" destination="gdv-i8-HQa" id="Pug-v4-ycM"/>
@@ -507,6 +512,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CZc-hS-rRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="qYo-g3-cmy">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="p6Y-FO-zAb" id="G6X-PY-Ykb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2840.579710144928" y="437.94642857142856"/>
         </scene>
@@ -816,16 +826,17 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPo-lF-3kp">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPo-lF-3kp">
                                 <rect key="frame" x="24" y="768" width="366" height="70"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Ejm-FZ-dj2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
                                 <state key="normal" title="Inscribir">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <state key="disabled" title=" Bloqueado" image="lock" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ybb-mI-kVv"/>
@@ -898,13 +909,14 @@
         <image name="chevron.forward.circle.fill" catalog="system" width="128" height="121"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="lock" catalog="system" width="128" height="128"/>
         <image name="lock.fill" catalog="system" width="128" height="128"/>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
-            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkBlue">
             <color red="0.20000000000000001" green="0.28627450980392155" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

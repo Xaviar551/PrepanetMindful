@@ -18,10 +18,10 @@ class CourseTableViewCell: UITableViewCell {
     
     
     var statusMap = [
-        "Acreditado" : 0,
-        "No Acreditado": 1,
-        "Cursando": 2
-    ]
+            "A" : 0,
+            "NA": 1,
+            "C": 2
+        ]
     
     let textColors:[UIColor]=[.systemBlue, .systemRed, .systemYellow]
     let images:[UIImage?]=[
