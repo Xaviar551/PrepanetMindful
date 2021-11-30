@@ -98,7 +98,9 @@ class PrepanetMindfulModel: NSObject {
                 PrepanetMindfulModel.signedInUser.nombre=snap.documents[0].data()["nombre_completo"] as! String
                 PrepanetMindfulModel.signedInUser.matriculaONomina=snap.documents[0].data()["matricula_o_nomina"] as! String
                 PrepanetMindfulModel.signedInUser.credenciales=snap.documents[0].data()["credenciales"] as! Int
+                PrepanetMindfulModel.signedInUser.campus=snap.documents[0].data()["campus"] as! String
                 callbackFunction(PrepanetMindfulModel.signedInUser.credenciales == 2 ? "admin" : "no-admin")
+                
                 
             }
             
@@ -294,6 +296,7 @@ class User{
     var matriculaONomina: String!
     var credenciales: Int!
     var uid: String!
+    var campus: String!
 }
 class StudentCourse{
     var studentUid: String!

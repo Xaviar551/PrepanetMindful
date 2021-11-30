@@ -53,15 +53,28 @@ class CoursesTableViewController: UITableViewController {
                 for course in self.courses{
                     course.status=""
                 }
-                model.obetenerCuentaAlumnosInscritosNacional({(cuenta: [Int]) in
-                    var i=0
-                    for course in self.courses{
-                        course.status="Alumnos inscritos: "+String(cuenta[i])
-                        print(cuenta[i])
-                        i+=1
-                    }
-                    self.tableView.reloadData()
-                })
+                if model.getUser().campus == ""{
+                    model.obetenerCuentaAlumnosInscritosNacional({(cuenta: [Int]) in
+                        var i=0
+                        for course in self.courses{
+                            course.status="Alumnos inscritos: "+String(cuenta[i])
+                            print(cuenta[i])
+                            i+=1
+                        }
+                        self.tableView.reloadData()
+                    })
+                }
+                else{
+                    model.obtenerCuentaAlumnosInscritosCampus(campus: model.getUser().campus,{(cuenta: [Int]) in
+                        var i=0
+                        for course in self.courses{
+                            course.status="Alumnos inscritos: "+String(cuenta[i])
+                            print(cuenta[i])
+                            i+=1
+                        }
+                        self.tableView.reloadData()
+                    })
+                }
             }
             else{
                 self.tableView.reloadData()
@@ -143,6 +156,9 @@ class CoursesTableViewController: UITableViewController {
         } else {
             let nextView = segue.destination as! StudentsViewController
             nextView.courseIndex=courseIndex
+            let model=PrepanetMindfulModel()
+            nextView.campus = model.getUser().campus
+            
         }
         
     }

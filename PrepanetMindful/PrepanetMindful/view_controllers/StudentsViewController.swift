@@ -19,13 +19,30 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tableView: UITableView!
     
     var student: Student!
-    
+        
     var courseIndex: Int!
     var studentList: [StudentCourse]=[]
     
     var renderedList: [StudentCourse]=[]
     
     var studentIndex = -1
+
+    var campus: String!
+    
+    let mapCampusToID=[
+        "Monterrey": "MTY",
+        "Guadalajara": "GDL",
+        "Santa Fe": "CSF",
+        "Cuernavaca": "CCV",
+        "Ciudad de México": "CDMX"
+    ]
+    let mapIdToCampus=[
+            "MTY" : "Monterrey",
+            "GDL" : "Guadalajara",
+            "CSF" : "Santa Fe",
+            "CCV" : "Cuernavaca",
+            "CDMX" : "Ciudad de México"
+        ]
     
     
     @IBOutlet weak var searchButton: UIImageView!
@@ -64,21 +81,29 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         vwSearchBackground.round(cornerRadius: 25.0, borderWidth: 1, borderColor: .black)
         
-        // if usario.nacional
-        dropDownSetup()
+        if campus==""{
+            dropDownSetup()
+        }
+        else{
+            // swap campus text
+            let model=PrepanetMindfulModel()
+            self.lbCampus.text = "Campus \(mapIdToCampus[model.getUser().campus]!)"
+
+        }
         
         
         
         let model=PrepanetMindfulModel()
-        model.obtenerListaDeAlumnos(curso: courseIndex, campus: "1",{(studentsC:[StudentCourse]) in
+        
+        let usedCampus = campus=="" ? "MTY":campus
+        model.obtenerListaDeAlumnos(curso: courseIndex, campus: usedCampus!,{(studentsC:[StudentCourse]) in
             print("count:")
             print(studentsC)
-            for studentC in studentsC{
-                self.studentList.append(studentC)
-                self.renderedList=self.studentList
-                self.tableView.reloadData()
-            }
+            self.studentList=studentsC
+            self.renderedList=self.studentList
+            self.tableView.reloadData()
         })
+
     }
     
     @objc func didTapItem() { menu.show() }
@@ -94,8 +119,17 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
         
         menu.selectionAction = { index, title in
             self.lbCampus.text = "Campus \(title)"
-            
-            
+            // todo: alumnos de campus
+            self.tfSearch.text=""
+            let model=PrepanetMindfulModel()
+            model.obtenerListaDeAlumnos(curso: self.courseIndex, campus: self.mapCampusToID[title]!,{(studentsC:[StudentCourse]) in
+                print("count:")
+                print(studentsC)
+                self.studentList=studentsC
+                self.renderedList=self.studentList
+                self.tableView.reloadData()
+                
+            })
             
         }
     }
