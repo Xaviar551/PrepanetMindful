@@ -17,8 +17,6 @@ class CourseDetailViewController: UIViewController {
     @IBOutlet weak var lbDescriptionTxt: UILabel!
     @IBOutlet weak var btnEnroll: UIButton!
     
-    @IBOutlet weak var startStackView: UIStackView!
-    @IBOutlet weak var finalStackView: UIStackView!
     
     var canEnrol: Bool!
         
@@ -43,13 +41,6 @@ class CourseDetailViewController: UIViewController {
         super.viewDidLoad()
         btnEnroll.isEnabled=canEnrol
         btnEnroll.layer.cornerRadius = btnEnroll.frame.size.height/2
-        
-        let spacerView = UIView()
-        spacerView.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        startStackView.addArrangedSubview(spacerView)
-        let spacerView2 = UIView()
-        spacerView2.setContentHuggingPriority(.defaultLow, for: .horizontal)
-        finalStackView.addArrangedSubview(spacerView2)
         
         let formatter = DateFormatter()
         formatter.timeZone = .current
