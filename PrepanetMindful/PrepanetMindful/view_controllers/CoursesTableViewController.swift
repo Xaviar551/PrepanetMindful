@@ -26,6 +26,7 @@ class CoursesTableViewController: UITableViewController {
     var canEnrol=false
     var courses: [Course]=[]
     var courseIndex=0
+    var courseName=""
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.portrait
@@ -133,6 +134,7 @@ class CoursesTableViewController: UITableViewController {
            
         } else {
             courseIndex=indexPath.row
+            courseName = courses[indexPath.row].name
             performSegue(withIdentifier: "showStudents", sender: tableView.cellForRow(at: indexPath))
         }
     }
@@ -156,6 +158,7 @@ class CoursesTableViewController: UITableViewController {
         } else {
             let nextView = segue.destination as! StudentsViewController
             nextView.courseIndex=courseIndex
+            nextView.title = courseName
             let model=PrepanetMindfulModel()
             nextView.campus = model.getUser().campus
             
