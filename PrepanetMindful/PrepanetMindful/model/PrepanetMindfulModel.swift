@@ -199,20 +199,23 @@ class PrepanetMindfulModel: NSObject {
             for doc in snap.documents{
                 let alumno=StudentCourse()
                 let student=Student()
-                student.name=snap.documents[0].data()["nombre_completo"] as! String
-                student.id=snap.documents[0].data()["matricula_o_nomina"] as! String
-                student.campus="MTY"
+                student.name=doc.data()["nombre_completo"] as! String
+                student.id=doc.data()["matricula_o_nomina"] as! String
+                student.campus=doc.data()["campus"] as! String
                 alumno.student=student
                 alumno.currentCourse=0
                 alumno.userCourseResults=[]
-                alumno.studentUid=snap.documents[0].data()["uid"] as! String
+                alumno.studentUid=doc.data()["uid"] as! String
                 for course in PrepanetMindfulModel.persistentCourseList{
                     let copy: Course=course.copy() as! Course
                     copy.status="P"
                     alumno.userCourseResults.append(copy)
                 }
                 alumnos[alumno.studentUid]=alumno
+                print(student.name)
             }
+            print("alumnos inscritos:")
+            print(alumnos.count)
             let refInscripciones=db.collection("inscripcion").getDocuments(){
                 (qsnap2, err2) in
                 guard let snap2=qsnap2 else{
