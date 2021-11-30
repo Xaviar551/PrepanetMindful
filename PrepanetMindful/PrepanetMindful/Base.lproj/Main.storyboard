@@ -19,9 +19,20 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGr-aT-V6Z">
                                 <rect key="frame" x="0.0" y="412" width="414" height="450"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-Dw-hos">
+                                        <rect key="frame" x="192" y="412" width="30" height="30"/>
+                                        <state key="normal" title="Info"/>
+                                        <connections>
+                                            <segue destination="x39-hb-oMP" kind="show" identifier="showCredits" id="HH4-rz-mwT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" name="DarkBlue"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dUD-Dw-hos" secondAttribute="bottom" constant="8" id="Pg7-dR-Acw"/>
                                     <constraint firstAttribute="height" constant="450" id="h5x-UU-h0J"/>
+                                    <constraint firstItem="dUD-Dw-hos" firstAttribute="centerX" secondItem="MGr-aT-V6Z" secondAttribute="centerX" id="lgj-EH-bc3"/>
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef8-Kz-xqe">
@@ -183,6 +194,36 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076.8115942028987" y="87.723214285714278"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PEM-pE-TOa">
+            <objects>
+                <viewController id="x39-hb-oMP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4aE-xs-erk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKj-VX-D4q">
+                                <rect key="frame" x="24" y="140" width="366" height="142.5"/>
+                                <string key="text">PrepanetMindful fue desarrollado como proyecto final de la materia Integración de seguridad informática en redes y sistemas de software en el semestre Agosto-Diciembre 2021. Desarrolladores: Ricardo Rodríguez Rodríguez, Javier Prieto Camarillo, Cristian Omar Urbina Herrera.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LJc-fV-5sL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LJc-fV-5sL" firstAttribute="trailing" secondItem="AKj-VX-D4q" secondAttribute="trailing" constant="24" id="7ZJ-8P-W6T"/>
+                            <constraint firstItem="AKj-VX-D4q" firstAttribute="leading" secondItem="LJc-fV-5sL" secondAttribute="leading" constant="24" id="Prb-5i-FkW"/>
+                            <constraint firstItem="AKj-VX-D4q" firstAttribute="top" secondItem="LJc-fV-5sL" secondAttribute="top" id="idP-a3-AvI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ont-XJ-Iz5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXv-KC-PXt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076.8115942028987" y="774.77678571428567"/>
         </scene>
         <!--Courses-->
         <scene sceneID="UBg-6X-yxv">

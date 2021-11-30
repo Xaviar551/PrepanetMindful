@@ -77,8 +77,10 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nextView = segue.destination as! CoursesTableViewController
-        nextView.typeOfUser = userType
+        if segue.identifier == "loginToCourses" {
+            let nextView = segue.destination as! CoursesTableViewController
+            nextView.typeOfUser = userType
+        }
     }
 }
 
