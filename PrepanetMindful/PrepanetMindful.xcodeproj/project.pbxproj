@@ -16,6 +16,7 @@
 		783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */; };
 		8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */; };
 		8D0D7CC02734459D0035F302 /* ProfileCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */; };
+		BC0AD0E127561CCD001B4991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */; };
 		BC1B7C61273E309B006391CC /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C60273E309B006391CC /* StudentsViewController.swift */; };
 		BC1B7C66273E3803006391CC /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */; };
 		BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7516BB2734CBA300E93E68 /* Colors.xcassets */; };
@@ -27,7 +28,6 @@
 		EBEAC15B2755E0E7003A860A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EBEAC15A2755E0E7003A860A /* FirebaseFirestore */; };
 		EBEAC15D2755E0E7003A860A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EBEAC15C2755E0E7003A860A /* FirebaseFirestoreSwift-Beta */; };
 		EBED073B2755E73A003D4ADC /* PrepanetMindfulModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED073A2755E73A003D4ADC /* PrepanetMindfulModel.swift */; };
-		EBED073F2755EB81003D4ADC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBED073E2755EB81003D4ADC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +44,7 @@
 		5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.release.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.release.xcconfig"; sourceTree = "<group>"; };
 		8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCourseTableViewCell.swift; sourceTree = "<group>"; };
+		BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC1B7C60273E309B006391CC /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
 		BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		BC7516BB2734CBA300E93E68 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
 		D90E71712744BB160026779F /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		EBED073A2755E73A003D4ADC /* PrepanetMindfulModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepanetMindfulModel.swift; sourceTree = "<group>"; };
-		EBED073E2755EB81003D4ADC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 				BC7516BB2734CBA300E93E68 /* Colors.xcassets */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
-				EBED073E2755EB81003D4ADC /* GoogleService-Info.plist */,
+				BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */,
 				3B07F9F12721D06100FA88FE /* Info.plist */,
 			);
 			path = PrepanetMindful;
@@ -231,7 +231,7 @@
 			files = (
 				3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */,
 				BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */,
-				EBED073F2755EB81003D4ADC /* GoogleService-Info.plist in Resources */,
+				BC0AD0E127561CCD001B4991 /* GoogleService-Info.plist in Resources */,
 				3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */,
 				3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */,
 			);

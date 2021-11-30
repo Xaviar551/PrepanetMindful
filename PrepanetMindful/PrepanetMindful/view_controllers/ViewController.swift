@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // container.round(cornerRadius: 25.0, borderWidth: 2.0, borderColor: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))

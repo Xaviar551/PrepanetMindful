@@ -26,6 +26,15 @@ class CoursesTableViewController: UITableViewController {
     var canEnrol=false
     var courses: [Course]=[]
     var courseIndex=0
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(named: "DarkBlue")

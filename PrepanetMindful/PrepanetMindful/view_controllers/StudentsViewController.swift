@@ -45,6 +45,15 @@ class StudentsViewController: UIViewController, UITableViewDataSource,
                             students: studentList)
         self.tableView.reloadData()
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

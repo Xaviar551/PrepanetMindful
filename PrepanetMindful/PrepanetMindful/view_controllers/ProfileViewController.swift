@@ -18,6 +18,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     var student : Student!
     var courses: [Course]!
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
