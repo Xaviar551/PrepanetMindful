@@ -834,6 +834,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <state key="disabled" title=" Bloqueado" image="lock" catalog="system"/>
+                                <connections>
+                                    <action selector="enrolAction:" destination="ICd-eI-q5z" eventType="touchUpInside" id="8Ru-6F-yG2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ybb-mI-kVv"/>
