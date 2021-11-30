@@ -628,7 +628,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YsR-Ga-dlA">
                                 <rect key="frame" x="0.0" y="88" width="414" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ricardo Rodríguez Rodríguez" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wur-dy-kgg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ricardo Rodríguez Rodríguez" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="wur-dy-kgg">
                                         <rect key="frame" x="81" y="15" width="325" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -647,7 +647,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dxE-S3-Ooa">
-                                        <rect key="frame" x="8" y="22.5" width="65" height="64"/>
+                                        <rect key="frame" x="8" y="18" width="65" height="64"/>
                                         <color key="tintColor" systemColor="labelColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="mVt-pH-GC9"/>
@@ -663,8 +663,8 @@
                                     <constraint firstItem="4gP-IT-TzD" firstAttribute="top" secondItem="2CR-c8-zs7" secondAttribute="bottom" constant="2" id="c94-JS-0oE"/>
                                     <constraint firstAttribute="height" constant="100" id="h63-R3-kxd"/>
                                     <constraint firstItem="2CR-c8-zs7" firstAttribute="leading" secondItem="wur-dy-kgg" secondAttribute="leading" id="l8I-gU-7UT"/>
+                                    <constraint firstItem="dxE-S3-Ooa" firstAttribute="centerY" secondItem="YsR-Ga-dlA" secondAttribute="centerY" id="ldJ-1F-MZP"/>
                                     <constraint firstItem="2CR-c8-zs7" firstAttribute="top" secondItem="wur-dy-kgg" secondAttribute="bottom" constant="2" id="sd7-NO-OGG"/>
-                                    <constraint firstItem="dxE-S3-Ooa" firstAttribute="top" secondItem="YsR-Ga-dlA" secondAttribute="top" constant="22" id="tJH-rp-aXv"/>
                                     <constraint firstItem="4gP-IT-TzD" firstAttribute="leading" secondItem="2CR-c8-zs7" secondAttribute="leading" id="wc7-ek-Wyn"/>
                                     <constraint firstAttribute="trailing" secondItem="wur-dy-kgg" secondAttribute="trailing" constant="8" id="xoe-gt-QZI"/>
                                 </constraints>
@@ -704,13 +704,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-BW-LEK">
                                 <rect key="frame" x="0.0" y="88" width="414" height="230"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-Ye-FJB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3I3-Ye-FJB">
                                         <rect key="frame" x="8" y="8" width="398" height="212"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="212" id="48X-8I-3yx"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <constraints>
+                                    <constraint firstItem="3I3-Ye-FJB" firstAttribute="top" secondItem="H5e-BW-LEK" secondAttribute="top" constant="8" id="4Ln-AT-aVb"/>
+                                    <constraint firstItem="3I3-Ye-FJB" firstAttribute="leading" secondItem="H5e-BW-LEK" secondAttribute="leading" constant="8" id="JzV-Zo-yXW"/>
+                                    <constraint firstAttribute="trailing" secondItem="3I3-Ye-FJB" secondAttribute="trailing" constant="8" id="Wl2-jD-lsY"/>
                                     <constraint firstAttribute="height" constant="230" id="gyi-Gu-z7D"/>
                                 </constraints>
                             </view>
