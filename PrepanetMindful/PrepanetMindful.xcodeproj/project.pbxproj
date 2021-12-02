@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,25 @@
 		3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9E92721D06000FA88FE /* Main.storyboard */; };
 		3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EC2721D06100FA88FE /* Assets.xcassets */; };
 		3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */; };
-		8DDAFC8B2732309B00DF3BEC /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC8A2732309B00DF3BEC /* CourseView.swift */; };
-		8DDAFC8F2732313B00DF3BEC /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC8E2732313B00DF3BEC /* CoursesViewController.swift */; };
-		8DDAFC922732930F00DF3BEC /* Taller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAFC912732930F00DF3BEC /* Taller.swift */; };
+		783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */; };
+		8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */; };
+		8D0D7CC02734459D0035F302 /* ProfileCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */; };
+		BC0AD0E127561CCD001B4991 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */; };
+		BC1B7C61273E309B006391CC /* StudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C60273E309B006391CC /* StudentsViewController.swift */; };
+		BC1B7C66273E3803006391CC /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */; };
+		BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC7516BB2734CBA300E93E68 /* Colors.xcassets */; };
+		BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */; };
+		BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */; };
+		BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */; };
+		D90E71722744BB160026779F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E71712744BB160026779F /* ViewUtils.swift */; };
+		EBEAC1592755E0E7003A860A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EBEAC1582755E0E7003A860A /* FirebaseAuth */; };
+		EBEAC15B2755E0E7003A860A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EBEAC15A2755E0E7003A860A /* FirebaseFirestore */; };
+		EBEAC15D2755E0E7003A860A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = EBEAC15C2755E0E7003A860A /* FirebaseFirestoreSwift-Beta */; };
+		EBED073B2755E73A003D4ADC /* PrepanetMindfulModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED073A2755E73A003D4ADC /* PrepanetMindfulModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.debug.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.debug.xcconfig"; sourceTree = "<group>"; };
 		3B07F9E02721D06000FA88FE /* PrepanetMindful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrepanetMindful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B07F9E32721D06000FA88FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B07F9E52721D06000FA88FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,9 +40,19 @@
 		3B07F9EC2721D06100FA88FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B07F9EF2721D06100FA88FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B07F9F12721D06100FA88FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8DDAFC8A2732309B00DF3BEC /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
-		8DDAFC8E2732313B00DF3BEC /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
-		8DDAFC912732930F00DF3BEC /* Taller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Taller.swift; sourceTree = "<group>"; };
+		3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrepanetMindful.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrepanetMindful.release.xcconfig"; path = "Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful.release.xcconfig"; sourceTree = "<group>"; };
+		8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCourseTableViewCell.swift; sourceTree = "<group>"; };
+		BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC1B7C60273E309B006391CC /* StudentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsViewController.swift; sourceTree = "<group>"; };
+		BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		BC7516BB2734CBA300E93E68 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
+		BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
+		BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		D90E71712744BB160026779F /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		EBED073A2755E73A003D4ADC /* PrepanetMindfulModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepanetMindfulModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783A6A9F6C9C6F74FE263EBE /* Pods_PrepanetMindful.framework in Frameworks */,
+				EBEAC15D2755E0E7003A860A /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				EBEAC1592755E0E7003A860A /* FirebaseAuth in Frameworks */,
+				EBEAC15B2755E0E7003A860A /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +75,8 @@
 			children = (
 				3B07F9E22721D06000FA88FE /* PrepanetMindful */,
 				3B07F9E12721D06000FA88FE /* Products */,
+				6CB9C90A5FEC08A4A55680A4 /* Pods */,
+				B667773756D5DB38AA5893F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,18 +91,75 @@
 		3B07F9E22721D06000FA88FE /* PrepanetMindful */ = {
 			isa = PBXGroup;
 			children = (
+				EBED07392755E6CF003D4ADC /* model */,
+				D90E71792744BD690026779F /* utils */,
+				D90E71782744BCC80026779F /* custom_cell_controllers */,
+				D90E71772744BCA30026779F /* view_controllers */,
 				3B07F9E32721D06000FA88FE /* AppDelegate.swift */,
 				3B07F9E52721D06000FA88FE /* SceneDelegate.swift */,
-				3B07F9E72721D06000FA88FE /* ViewController.swift */,
 				3B07F9E92721D06000FA88FE /* Main.storyboard */,
-				8DDAFC8E2732313B00DF3BEC /* CoursesViewController.swift */,
+				BC7516BB2734CBA300E93E68 /* Colors.xcassets */,
 				3B07F9EC2721D06100FA88FE /* Assets.xcassets */,
 				3B07F9EE2721D06100FA88FE /* LaunchScreen.storyboard */,
+				BC0AD0E027561CCD001B4991 /* GoogleService-Info.plist */,
 				3B07F9F12721D06100FA88FE /* Info.plist */,
-				8DDAFC8A2732309B00DF3BEC /* CourseView.swift */,
-				8DDAFC912732930F00DF3BEC /* Taller.swift */,
 			);
 			path = PrepanetMindful;
+			sourceTree = "<group>";
+		};
+		6CB9C90A5FEC08A4A55680A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */,
+				5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B667773756D5DB38AA5893F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CDEF60B836A447253CEE59B /* Pods_PrepanetMindful.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D90E71772744BCA30026779F /* view_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC1B7C60273E309B006391CC /* StudentsViewController.swift */,
+				8D0D7CBC27343DD40035F302 /* ProfileViewController.swift */,
+				BCF1B36D2733A59F00EBB07E /* CoursesTableViewController.swift */,
+				3B07F9E72721D06000FA88FE /* ViewController.swift */,
+				BCF1B36A27339E9700EBB07E /* CourseDetailViewController.swift */,
+			);
+			path = view_controllers;
+			sourceTree = "<group>";
+		};
+		D90E71782744BCC80026779F /* custom_cell_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC1B7C65273E3803006391CC /* StudentTableViewCell.swift */,
+				8D0D7CBF2734459D0035F302 /* ProfileCourseTableViewCell.swift */,
+				BCF1B3702733AE2E00EBB07E /* CourseTableViewCell.swift */,
+			);
+			path = custom_cell_controllers;
+			sourceTree = "<group>";
+		};
+		D90E71792744BD690026779F /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D90E71712744BB160026779F /* ViewUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		EBED07392755E6CF003D4ADC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EBED073A2755E73A003D4ADC /* PrepanetMindfulModel.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,15 +169,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B07F9F42721D06100FA88FE /* Build configuration list for PBXNativeTarget "PrepanetMindful" */;
 			buildPhases = (
+				7DF659D0D562B304BCADEC1D /* [CP] Check Pods Manifest.lock */,
 				3B07F9DC2721D06000FA88FE /* Sources */,
 				3B07F9DD2721D06000FA88FE /* Frameworks */,
 				3B07F9DE2721D06000FA88FE /* Resources */,
+				5EF21AAFE92375CE8577492D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PrepanetMindful;
+			packageProductDependencies = (
+				EBEAC1582755E0E7003A860A /* FirebaseAuth */,
+				EBEAC15A2755E0E7003A860A /* FirebaseFirestore */,
+				EBEAC15C2755E0E7003A860A /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = PrepanetMindful;
 			productReference = 3B07F9E02721D06000FA88FE /* PrepanetMindful.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +212,9 @@
 				Base,
 			);
 			mainGroup = 3B07F9D72721D06000FA88FE;
+			packageReferences = (
+				EBEAC1572755E0E7003A860A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3B07F9E12721D06000FA88FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B07F9F02721D06100FA88FE /* LaunchScreen.storyboard in Resources */,
+				BC7516BC2734CBA300E93E68 /* Colors.xcassets in Resources */,
+				BC0AD0E127561CCD001B4991 /* GoogleService-Info.plist in Resources */,
 				3B07F9ED2721D06100FA88FE /* Assets.xcassets in Resources */,
 				3B07F9EB2721D06000FA88FE /* Main.storyboard in Resources */,
 			);
@@ -141,17 +239,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5EF21AAFE92375CE8577492D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PrepanetMindful/Pods-PrepanetMindful-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DF659D0D562B304BCADEC1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrepanetMindful-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B07F9DC2721D06000FA88FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF1B36B27339E9700EBB07E /* CourseDetailViewController.swift in Sources */,
 				3B07F9E82721D06000FA88FE /* ViewController.swift in Sources */,
-				8DDAFC922732930F00DF3BEC /* Taller.swift in Sources */,
+				D90E71722744BB160026779F /* ViewUtils.swift in Sources */,
 				3B07F9E42721D06000FA88FE /* AppDelegate.swift in Sources */,
+				BCF1B36E2733A59F00EBB07E /* CoursesTableViewController.swift in Sources */,
+				8D0D7CBD27343DD40035F302 /* ProfileViewController.swift in Sources */,
+				8D0D7CC02734459D0035F302 /* ProfileCourseTableViewCell.swift in Sources */,
 				3B07F9E62721D06000FA88FE /* SceneDelegate.swift in Sources */,
-				8DDAFC8B2732309B00DF3BEC /* CourseView.swift in Sources */,
-				8DDAFC8F2732313B00DF3BEC /* CoursesViewController.swift in Sources */,
+				EBED073B2755E73A003D4ADC /* PrepanetMindfulModel.swift in Sources */,
+				BCF1B3712733AE2E00EBB07E /* CourseTableViewCell.swift in Sources */,
+				BC1B7C61273E309B006391CC /* StudentsViewController.swift in Sources */,
+				BC1B7C66273E3803006391CC /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +441,7 @@
 		};
 		3B07F9F52721D06100FA88FE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CF2F97F3C7AA3522CF2918 /* Pods-PrepanetMindful.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +460,7 @@
 		};
 		3B07F9F62721D06100FA88FE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A9464C113C8381DEB1A524B /* Pods-PrepanetMindful.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -351,6 +499,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EBEAC1572755E0E7003A860A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EBEAC1582755E0E7003A860A /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBEAC1572755E0E7003A860A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EBEAC15A2755E0E7003A860A /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBEAC1572755E0E7003A860A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		EBEAC15C2755E0E7003A860A /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBEAC1572755E0E7003A860A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B07F9D82721D06000FA88FE /* Project object */;
 }
